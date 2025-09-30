@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "css"
+		},
+		{
+			"path": "de12"
+		},
+		{
+			"path": "digi_fab"
+		},
+		{
+			"path": "images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "digi_fab"
+	}
+}
