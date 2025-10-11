@@ -52,3 +52,10 @@ span.blackback{
     color: #efefef;
 }
 
+/*ここから*/
+.container{
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+}
