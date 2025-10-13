@@ -59,3 +59,35 @@ span.blackback{
     margin: 0 auto;
     position: relative;
 }
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.image-1{
+    width: 30%;
+}
+.logo{
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+.logo span{
+    color: #ff4530;
+}
+.color-1{
+    color: orange;
+}
+.service_inner{
+margin-bottom: 40px;
+position: relative;
+}
+.column-40 {
+    width: 40%;
+}
+.column-55{
+    width: 55%;
+}
+.text{
+    line-height: 2;
+}
