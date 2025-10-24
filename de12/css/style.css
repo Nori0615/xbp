@@ -56,7 +56,16 @@ html{
     margin: 0 auto;
     position: relative;
 }
-
+.container-1{
+  display: flex;
+  gap: 20px; 
+}
+.left-1, .right-1 {
+  flex: 0.2; 
+}
+.left-2, .right-2 {
+  flex: 0.5; 
+}
 .flex-1{
     display: flex;
     align-items: center;
@@ -66,6 +75,7 @@ html{
     justify-content: space-between;
     align-items: center;
 }
+
 
 /*header*/
  header{
@@ -79,6 +89,9 @@ html{
 }
 .logo span{
     color: #ff4530;
+}
+.logo span-1{
+    color: blue;
 }
 .header_menu li{
     margin-left: 40px;
@@ -150,6 +163,12 @@ ul{
     width: 100%;
     text-align: center;
 }
+.hero_inner-1{
+    z-index: 2;
+    color: blue;
+    width: 100%;
+    text-align: center;
+}
 .hero_inner p{
     font-size: 20px;
     font-weight: 500;
@@ -174,6 +193,12 @@ ul{
     color: #ff4530;
     margin-bottom: 60px;
 }
+.title-1{
+    font-size: 35px;
+    font-weight: 500;
+    color: blue;
+    margin-bottom: 60px;
+}
 #concept h3{
     font-size: 36px;
     font-weight: 700;
@@ -185,6 +210,9 @@ ul{
 
 .text{
     line-height: 2;
+}
+.text-1{
+    font-size: 20px;
 }
 .concept-img{
     background-image: url(../images/git\ ロゴ.png);
@@ -201,13 +229,31 @@ ul{
     width: 300px;
     height: 300px;
     border-radius: 20px;
-    
+}
+.concept-img-2{
+    background-image: url(../images/グラフ定点結果.png);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    border-radius: 20px;
 }
 .heading{
     font-family:'Dancing Script', cursive;
     font-size: 200px;
     font-weight: 700;
     color: #ff4530;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-30%);
+    z-index: -1;
+}
+.heading-1{
+    font-family:'Dancing Script', cursive;
+    font-size: 200px;
+    font-weight: 700;
+    color: blue;
     opacity: 0.1;
     position: absolute;
     top: 0;
