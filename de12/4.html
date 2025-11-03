@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+
+
+
+    <title>のりのゲーム制作</title>
+   
+      <link rel="stylesheet" href="./css/style.css">
+      <!--google font-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<header>
+    <div class="container fl pop">
+        <a href="" class="logo link-no-underline" id="a-color-black">
+            <span-1>ゲーム制作</span-1> 課題
+        </a>
+        <section id="" class="container">
+            <div class="hero_inner-1">
+                <h1>チンチロ</h1>
+            </div>
+        </section> 
+    </div>
+</header>    
+<section class="container">
+        <div>
+
+        </div>
+
+    </section>
+    
+    <section class="container">
+        <div>
+            <p class="text">
+                <h1>ゲームのコード</h1>
+                <div class="bbb">
+                    <pre><code class="">
+                        import random
+                        import time
+                        print("----------------------")
+                        print("---【チンチロ対決】---")
+                        print("----------------------")
+                        time.sleep(1)
+                        #---------------------------------------------------------------
+                        # ユーザー側
+                        print("")
+                        print("---【あなた】の番です---")
+                        print("")
+                        player=0
+                        for i in range(1,4):
+                            print(f"\n{i}回目、あなたがサイコロを振る...")
+                            time.sleep(1.2)
+                            a=random.randint(1,6)
+                            b=random.randint(1,6)
+                            c=random.randint(1,6)
+                            print("あなたの出目は",a,b,c)
+                            time.sleep(0.8)
+                            # 並び替え
+                            dice = sorted([a,b,c])#数字を小さい順に並べ替え
+                            a,b,c = dice
+                            # 特殊役・ゾロ目・目判定
+                            if (a,b,c) == (1,2,3): # ヒフミ
+                                player = -1
+                                print("ヒフミ（最弱）")
+                                break
+                            elif (a,b,c) == (4,5,6): # シゴロ
+                                player = 10
+                                print("シゴロ")
+                                break
+                            elif a == b == c == 1: # 1のゾロ目
+                                player = 20 + a
+                                print(f"{a}のゾロ目")
+                                break
+                            elif a == b == c == 6: # 6のゾロ目
+                                player = 13 + a
+                                print(f"{a}のゾロ目")
+                                break
+                            elif a == b == c == 5: # 5のゾロ目
+                                player = 13 + a
+                                print(f"{a}のゾロ目")
+                                break
+                            elif a == b == c == 4: # 4のゾロ目
+                                player = 13 + a
+                                print(f"{a}のゾロ目")
+                                break
+                            elif a == b == c == 3: # 3のゾロ目
+                                player = 13 + a
+                                print(f"{a}のゾロ目")
+                                break
+                            elif a == b == c == 2: # 2のゾロ目
+                                player = 13 + a
+                                print(f"{a}のゾロ目")
+                                break
+                            elif a == b:
+                                player = c
+                                print(f"{c}の目")
+                                break
+                            elif b == c:
+                                player = a
+                                print(f"{a}の目")
+                                break
+                            elif c == a:
+                                player = b
+                                print(f"{b}の目")
+                                break
+                            else:
+                                print("目なし！")
+                                player = 0
+                                if i == 3:
+                                    print("3回とも目なしでした…")
+                                time.sleep(0.8)
+                                continue
+                        time.sleep(1.5)
+                        #---------------------------------------------------------------
+                        # 親側
+                        print("")
+                        print("---【親】の番です---")
+                        print("")
+                        dealer=0
+                        for i in range(1,4):
+                            print(f"\n{i}回目、親がサイコロを振る...")
+                            time.sleep(1.2)
+                            d=random.randint(1,6)
+                            e=random.randint(1,6)
+                            f=random.randint(1,6)
+                            print("親の出目は",d,e,f)
+                            time.sleep(0.8)
+                            dice = sorted([d,e,f])
+                            d,e,f = dice
+                            if (d,e,f) == (1,2,3):
+                                dealer = -1
+                                print("ヒフミ（最弱）")
+                                break
+                            elif (d,e,f) == (4,5,6):
+                                dealer = 10
+                                print("シゴロ")
+                                break
+                            elif d == e == f == 1:
+                                dealer = 20 + d
+                                print(f"{d}のゾロ目")
+                                break
+                            elif d == e == f == 6:
+                                dealer = 13 + d
+                                print(f"{d}のゾロ目")
+                                break
+                            elif d == e == f ==5:
+                                dealer = 13 + d
+                                print(f"{d}のゾロ目")
+                                break
+                            elif d == e == f ==4:
+                                dealer = 13 + d
+                                print(f"{d}のゾロ目")
+                                break
+                            elif d == e == f ==3:
+                                dealer = 13 + d
+                                print(f"{d}のゾロ目")
+                                break
+                            elif d == e == f ==2:
+                                dealer = 13 + d
+                                print(f"{d}のゾロ目")
+                                break
+                            elif d == e:
+                                dealer = f
+                                print(f"{f}の目")
+                                break
+                            elif e == f:
+                                dealer = d
+                                print(f"{d}の目")
+                                break
+                            elif f == d:
+                                dealer = e
+                                print(f"{e}の目")
+                                break
+                            else:
+                                print("目なし！")
+                                dealer = 0
+                                if i == 3:
+                                    print("3回とも目なしでした…")
+                                    time.sleep(0.8)
+                                continue
+                        time.sleep(1.5)
+                        #---------------------------------------------------------------
+                        # 勝敗判定
+                        print("---------------------------------------------------------------")
+                        print(f"あなたの役：{player}")
+                        print(f"親の役　　：{dealer}")
+                        print("---------------------------------------------------------------")
+                        if player > dealer:
+                            print("あなたの勝ち！")
+                        elif player < dealer:
+                            print("親の勝ち！")
+                        else:
+                            print("引き分け！")
+                        print("-----------------------------------------------------------")
+                        time.sleep(1)
+                        print("ゲーム終了。")
+                    </code></pre>
+                </div>
+            <p class="text-1">
+        </div>
+    </section>
+    <section class="container">
+        <div>
+            <h1>
+                チンチロについて
+            </h1>
+            <p class="text-1">
+                チンチロは3つのサイコロを振って出た目で競うゲームです。
+            </p>
+        </div>
+        <h1>チンチロのルール</h1>
+        <div class="service_inner flex">
+            <div class="column-40">
+                <img src="./images/dice roll.jpg" width="100%" alt="">
+                ベットのとこは気にしないでください<br>
+                画像参照 https://tanteifan.com/chinchirorin/
+            </div>
+            <div class="column-55">
+                <div class="heading-1"></div>
+                
+                <h3></h3>
+                <p class="text">
+                    <h3>
+                        
+                    </h3>
+                    <p class="text-1">
+                        ・一人3回までサイコロを振ることができます。<br>
+                        ・役が出た時点でその役で勝負します。<br>
+
+                    </p>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div>
+            <h1>
+                作るために授業以外で覚えたこと
+            </h1>
+            <p class="text-1">
+                ・import timeでtime sleep(好きな時間)を途中に挟む<br>
+                ☞ゲームっぽい間が作れる<br>
+                ・sorted関数<br>
+                ☞3つのサイコロの出目を小さい順に並べ替えることができる<br>
+                ・break<br>
+                ☞出目が3回のうちに出たらそこでサイコロを振るのをやめることができる<br>
+                ・continue<br>
+                ☞役が出ないとき3回まで繰り返しサイコロを振れるようにできる<br>
+                
+            </p>
+        </div>
+    </section>
+    <section class="container">
+        <h2 class="title-1 pop">
+
+        </h2>
+        
+    </section>
+</body>
+
+</html>
