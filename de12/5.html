@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+
+
+
+    <title>のりのpython</title>
+   
+      <link rel="stylesheet" href="./css/style.css">
+      <!--google font-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<header>
+    <div class="container fl pop">
+        <a href="" class="logo link-no-underline" id="a-color-black">
+            <span-1>python</span-1> 課題
+        </a>
+        <section id="" class="container">
+            <div class="hero_inner-1">
+                <h1>ファッションコーディネーター</h1>
+            </div>
+        </section> 
+    </div>
+</header>    
+<section class="container">
+        <div>
+
+        </div>
+
+    </section>
+    
+    <section class="container">
+        <div>
+            <p class="text">
+                <h1>サイトのpythonコード</h1>
+                <div class="bbb">
+                    <pre><code class="">
+from flask import Flask, request, render_template_string
+from openai import OpenAI
+import base64, os
+
+#apikeyは直書きしない
+client = OpenAI(api_key="your_apikey")
+app = Flask(__name__)
+
+#分類させるジャンル一覧
+GENRES = [
+    "ストリート","ヴィンテージ","カジュアル","韓国",
+    "綺麗め","ガーリー","y2k","モード",
+    "アウトドア","スポーツミックス","ミニマル"
+]
+
+# HTML(1ファイルで完結させるため render_template_string を使用)
+HTML = """
+&lt;!doctype html&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;Fashion Diagnose&lt;/title&gt;
+&lt;style&gt;
+body{
+    background:#fff;
+    color:#000;
+    font-family: Georgia, serif;
+    padding:60px 80px;
+    line-height:1.7;
+    font-size:18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+h1{
+    font-size:48px;
+    font-weight:normal;
+    margin-bottom:60px;
+    letter-spacing:0.02em;
+}
+h2{
+    font-size:20px;
+    font-weight:normal;
+    text-transform:capitalize;
+    margin-top:60px;
+}
+img{ margin:60px 0; max-width:550px; }
+form{ margin-bottom:80px; }
+input[type=submit]{
+    background:none;
+    border:1px solid #000;
+    padding:14px 28px;
+    font-family:Georgia, serif;
+    font-size:16px;
+    cursor:pointer;
+}
+&lt;/style&gt;
+&lt;/head&gt;&lt;body&gt;
+
+&lt;h1&gt;Fashion Diagnose&lt;/h1&gt;
+
+&lt;form method="POST" enctype="multipart/form-data"&gt;
+    &lt;input type="file" name="image" accept="image/*" required&gt;
+    &lt;input type="submit" value="Analyse"&gt;
+&lt;/form&gt;
+
+{% if img64 %}
+    &lt;img src="data:image/png;base64,{{img64}}"&gt;
+{% endif %}
+
+{% if genre %}
+    &lt;h2&gt;Genre&lt;/h2&gt;
+    &lt;p&gt;{{genre}}&lt;/p&gt;
+{% endif %}
+
+{% if suggestion %}
+    &lt;h2&gt;Improvement&lt;/h2&gt;
+    &lt;p style="white-space:pre-line"&gt;{{suggestion}}&lt;/p&gt;
+{% endif %}
+
+&lt;/body&gt;&lt;/html&gt;
+"""
+
+# デフォルト(None)
+@app.route("/", methods=["GET","POST"])
+def index():
+    genre = None
+    suggestion = None
+    img64 = None
+
+    if request.method=="POST":
+        # POSTされた画像を読み込む
+        file = request.files["image"]
+        b = file.read()
+        # htmlに埋める用に base64に
+        img64 = base64.b64encode(b).decode()
+        # pngでもjpegでも勝手に MIME を自動で入れてくれる
+        mime = file.mimetype   # ← jpeg / png どっちでも
+        data_url = f"data:{mime};base64,{img64}"
+
+        # ----- genre -----
+        # system prompt で「候補のうち1個だけ返せ」と指示
+        sys = f"""
+あなたはプロのスタイリスト。
+以下の候補の中から **1つだけ** 正確に返す。
+返すときはちょうど同じ文字列だけ返す。余計な語は一切禁止。
+候補: {",".join(GENRES)}
+""".strip()
+
+        r1 = client.chat.completions.create(
+            model="gpt-5-mini",# gpt-5-miniでコスト低め
+            messages=[
+                {"role":"system","content":sys},
+                {
+                    "role":"user",
+                    "content":[
+                        {"type":"image_url","image_url":{"url":data_url}},
+                        {"type":"text","text":"ジャンルは？"}# 画像＋テキスト一緒に投げてる
+                    ]
+                }
+            ],
+        )
+        genre = r1.choices[0].message.content.strip()
+
+        # ----- improvement -----
+        sys2 = f"""
+あなたは{genre}ジャンルのプロ。
+画像の服装を見て、改善提案を段落テキストで出す。
+bullet記号は使わない。
+""".strip()
+
+        r2 = client.chat.completions.create(
+            model="gpt-5-mini",
+            messages=[
+                {"role":"system","content":sys2},
+                {
+                    "role":"user",
+                    "content":[
+                        {"type":"image_url","image_url":{"url":data_url}},
+                        {"type":"text","text":"改善ポイントを"}
+                    ]
+                }
+            ],
+        )
+        suggestion = r2.choices[0].message.content.strip()
+    
+    # HTMLに値を入れて返す
+    return render_template_string(HTML, genre=genre, suggestion=suggestion, img64=img64)
+
+if __name__=="__main__":
+    app.run(debug=True)# debug=True はローカル開発専用（本番NG）
+                    </code></pre>
+                </div>
+            <p class="text-1">
+        </div>
+    </section>
+    <section class="container">
+        <div>
+            <h1>
+                まとめ
+            </h1>
+             <p class="text-1">
+                <h2>問題点</h2>
+                ・判定が少しあいまいでジャンルや結果が変わることがある。
+            </p>
+            <p class="text-1">
+                <h2>AIの用い方</h2>
+                このサイトではAIを、写真から服装を判断してアドバイスを提案するのに用いました。
+            </p>
+            <p class="text-1">
+                <h2>参照元</h2>
+                このサイトはChatGPTを用いて制作しました。
+                
+            </p>
+            <p class="text-1">
+                <h2>感想</h2>
+                大方をChatGPTに作ってもらったがerrorが出ることが多く、調整するのに手間取った。
+                
+            </p>
+        </div>
+    </section>
+    <section class="container">
+        <h2 class="title-1 pop">
+
+        </h2>
+        
+    </section>
+</body>
+
+</html>

@@ -60,6 +60,12 @@ html{
   display: flex;
   gap: 20px; 
 }
+.container-2{
+    width: 90%;
+    max-width: 1120px;
+    margin:0 auto;
+    position: center;
+}
 .left-1, .right-1 {
   flex: 0.2; 
 }
@@ -75,8 +81,9 @@ html{
     justify-content: space-between;
     align-items: center;
 }
-
-
+.text-center{
+    text-align: center;
+}
 /*header*/
  header{
     padding: 27px 0;
