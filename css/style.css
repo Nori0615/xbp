@@ -52,3 +52,104 @@ span.blackback{
     color: #efefef;
 }
 
+
+/* ===== フォント & 雰囲気設定 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Playfair+Display:wght@500&display=swap');
+
+body {
+    font-family: 'Noto Serif JP', serif;
+    background: linear-gradient(180deg, #faf7f5 0%, #f3ece7 100%);
+    color: #2c2c2c;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* ===== ロゴ（正方形・エモい余白） ===== */
+logotohome {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+logotohome img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 100px; /* 柔らかさだけ残す */
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+logotohome img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+}
+
+/* ===== タイトル部分 ===== */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
+    letter-spacing: 3px;
+    margin: 20px 0 5px;
+    color: #1e1e1e;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* ===== エモ系ボタンレイアウト ===== */
+.portfolio-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.portfolio-buttons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #444;
+    transition: all 0.4s ease;
+}
+
+.portfolio-buttons img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.6s ease;
+    filter: brightness(0.95) saturate(1.1);
+}
+
+.portfolio-buttons span {
+    margin-top: 14px;
+    font-size: 1.05em;
+    font-family: 'Noto Serif JP', serif;
+    color: #555;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+/* ===== ホバーで淡く光る演出 ===== */
+.portfolio-buttons a:hover img {
+    transform: scale(1.06);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    filter: brightness(1.1) saturate(1.2);
+}
+
+.portfolio-buttons a:hover span {
+    opacity: 1;
+    color: #222;
+}
