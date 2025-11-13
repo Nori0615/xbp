@@ -91,3 +91,160 @@ position: relative;
 .text{
     line-height: 2;
 }
+/* ===========================
+   デジタルファブリケーション専用
+   海外新聞・雑誌風デザイン
+   =========================== */
+
+.fab-page {
+  font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
+  background-color: #fbfaf8;
+  color: #222;
+  line-height: 1.8;
+  padding: 60px 40px;
+  max-width: 880px;
+  margin: 60px auto;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e6e3;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- 背景にわずかな紙の質感 --- */
+.fab-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.04), transparent 60%);
+  pointer-events: none;
+}
+
+/* --- ロゴエリア（控えめ＆上品） --- */
+.fab-page .logotohome {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.fab-page .logotohome img {
+  width: 130px;
+  opacity: 0.9;
+  border-bottom: 2px solid #111;
+  padding-bottom: 6px;
+  filter: grayscale(100%) contrast(120%);
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+.fab-page .logotohome img:hover {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.04);
+}
+
+/* --- タイトルエリア --- */
+.fab-page h1 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.3em;
+  color: #111;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.fab-page h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #111;
+  margin: 12px auto 0;
+}
+
+.fab-page h2 {
+  text-align: center;
+  font-size: 1.4em;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 2.5em;
+  letter-spacing: 0.5px;
+}
+
+/* --- リスト部分（記事リンク風） --- */
+.fab-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.fab-page li.disc {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 10px 20px 20px;
+  font-size: 1.1em;
+  position: relative;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.fab-page li.disc:last-child {
+  border-bottom: none;
+}
+
+/* --- 装飾アイコン（レトロ感を演出） --- */
+.fab-page li.disc::before {
+  content: "❖";
+  position: absolute;
+  left: -25px;
+  top: 23px;
+  font-size: 0.7em;
+  color: #a66b55;
+  opacity: 0.8;
+}
+
+/* --- リンクスタイル --- */
+.fab-page li.disc a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  font-family: "Lora", serif;
+}
+
+.fab-page li.disc a:hover {
+  color: #a66b55;
+}
+
+/* --- ホバー時に少し浮く感じ --- */
+.fab-page li.disc:hover {
+  background-color: #f7f6f3;
+  transform: translateX(3px);
+}
+
+/* --- スマホ対応 --- */
+@media (max-width: 600px) {
+  .fab-page {
+    padding: 40px 20px;
+    margin: 20px;
+  }
+
+  .fab-page h1 {
+    font-size: 2.2em;
+  }
+
+  .fab-page h2 {
+    font-size: 1.1em;
+  }
+
+  .fab-page li.disc {
+    font-size: 1em;
+    padding: 15px;
+  }
+
+  .fab-page li.disc::before {
+    left: -18px;
+    top: 20px;
+  }
+}

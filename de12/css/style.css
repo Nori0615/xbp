@@ -330,43 +330,6 @@ position: relative;
 }
 
 /* =========================
-   ✨ 光の粒（キラキラ泡）
-   ========================= */
-.hp-index .light-particles {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    z-index: 1; /* カードより下、背景より上 */
-    pointer-events: none;
-}
-
-.hp-index .particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(190,230,255,0.3) 70%, transparent 100%);
-    border-radius: 50%;
-    animation: floatUp 12s linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes floatUp {
-    0% { transform: translateY(100vh) scale(0.6); opacity: 0; }
-    30%, 70% { opacity: 1; }
-    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
-}
-
-/* ランダム配置 */
-.hp-index .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 14s; }
-.hp-index .particle:nth-child(2) { left: 25%; animation-delay: 2s; animation-duration: 16s; }
-.hp-index .particle:nth-child(3) { left: 40%; animation-delay: 4s; animation-duration: 13s; }
-.hp-index .particle:nth-child(4) { left: 55%; animation-delay: 6s; animation-duration: 17s; }
-.hp-index .particle:nth-child(5) { left: 70%; animation-delay: 1s; animation-duration: 15s; }
-.hp-index .particle:nth-child(6) { left: 85%; animation-delay: 3s; animation-duration: 18s; }
-.hp-index .particle:nth-child(7) { left: 15%; animation-delay: 7s; animation-duration: 12s; }
-.hp-index .particle:nth-child(8) { left: 60%; animation-delay: 9s; animation-duration: 20s; }
-
-/* =========================
    💎 白いガラスカード
    ========================= */
 .hp-index .content-card {
