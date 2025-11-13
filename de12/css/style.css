@@ -297,3 +297,169 @@ position: relative;
 .bbb{
     background-color: azure;
 }
+/* aaa */
+/* =========================
+   💧 立体＆かわいい水ガラス風デザイン
+   ========================= */
+.hp-index {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 60px 20px;
+    overflow-y: auto; /* ✅ スクロール可能に */
+    background: linear-gradient(180deg, #eaf8ff 0%, #fdfdff 100%);
+    font-family: "Poppins", "Noto Sans JP", sans-serif;
+}
+
+/* 柔らかい光のエフェクト */
+.hp-index::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 25% 25%, rgba(190, 240, 255, 0.6), transparent 60%),
+                radial-gradient(circle at 75% 75%, rgba(240, 255, 255, 0.5), transparent 70%);
+    filter: blur(90px);
+    z-index: 0;
+}
+
+/* =========================
+   💎 白いガラスカード
+   ========================= */
+.hp-index .glass-card {
+    position: relative;
+    z-index: 1;
+    width: min(90%, 750px);
+    padding: 50px 40px;
+    border-radius: 32px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(220, 245, 255, 0.35));
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 10px 35px rgba(160, 200, 255, 0.25),
+        inset 0 3px 8px rgba(255, 255, 255, 0.6);
+    transition: all 0.5s ease;
+}
+
+/* ホバー時：ふんわり浮く */
+.hp-index .glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 16px 40px rgba(150, 210, 255, 0.35),
+        inset 0 3px 10px rgba(255, 255, 255, 0.6);
+}
+
+/* 光の縁取り */
+.hp-index .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(180, 230, 255, 0.25));
+    pointer-events: none;
+}
+
+/* =========================
+   ✨ テキスト
+   ========================= */
+.hp-index h1, 
+.hp-index h2, 
+.hp-index p {
+    text-align: center;
+    z-index: 2;
+    margin: 15px 0;
+    color: rgba(30, 60, 90, 0.9); /* ✅ 少し濃く */
+}
+
+.hp-index h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: #2b6ca6;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
+}
+
+.hp-index h2 {
+    font-size: 1.4rem;
+    color: #3c7eb1;
+}
+
+.hp-index p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* =========================
+   💠 メインボタン（水っぽく立体）
+   ========================= */
+.hp-index .glass-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 38px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a4f72;
+    text-decoration: none;
+    border-radius: 25px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.55), rgba(180, 230, 255, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    box-shadow:
+        inset 0 3px 8px rgba(255, 255, 255, 0.7),
+        0 6px 18px rgba(140, 210, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.hp-index .glass-button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.75), rgba(190, 245, 255, 0.4));
+    box-shadow:
+        inset 0 2px 10px rgba(255, 255, 255, 0.8),
+        0 10px 25px rgba(130, 200, 255, 0.6);
+}
+
+.hp-index .glass-button:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 3px 6px rgba(150, 210, 255, 0.4),
+        0 3px 8px rgba(100, 180, 255, 0.3);
+}
+
+/* =========================
+   💕 リストリンク
+   ========================= */
+.hp-index ol,
+.hp-index ul {
+    list-style: none;
+    padding: 0;
+    margin: 35px 0;
+    text-align: center;
+}
+
+.hp-index li {
+    margin: 12px 0;
+}
+
+.hp-index li a {
+    display: inline-block;
+    padding: 8px 22px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.4);
+    color: #2a598f;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(170, 220, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hp-index li a:hover {
+    background: rgba(220, 245, 255, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(170, 220, 255, 0.45);
+}
