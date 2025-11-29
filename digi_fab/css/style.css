@@ -295,4 +295,157 @@ position: relative;
     margin-bottom: 15px;
   }
 }
+/* 2.html */
+/* ================================
+   museum-page の中だけに適用
+   美術館スポットライト風デザイン
+================================ */
+
+/* 背景をほんのり暗め（展示室の雰囲気） */
+.museum-page {
+    font-family: "Noto Sans JP", "Poppins", sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    background: #f3f3f3;
+    color: #222;
+    line-height: 1.8;
+}
+
+/* タイトル（展示タイトルっぽい） */
+.museum-page h1 {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 80px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: #111;
+}
+
+/* ===== スポットライト付きの展示パネル ===== */
+.museum-page .panel {
+    position: relative;
+    display: flex;
+    gap: 45px;
+    align-items: flex-start;
+    margin: 80px auto;
+    padding: 60px 40px;
+    max-width: 1100px;
+
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e1e1e1;
+
+    /* スポットライト（上から光が落ちてくる感じ） */
+    box-shadow: 
+        0 -60px 150px -30px rgba(255, 255, 255, 0.8) inset,
+        0 0 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 写真と文章のレイアウト */
+.museum-page .panel .photo {
+    flex: 0 0 40%;
+    min-width: 270px;
+}
+
+.museum-page .panel .text-area {
+    flex: 1;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+/* 画像を作品展示っぽく（額縁＋スポットライト） */
+.museum-page .panel img {
+    width: 100%;
+    background: radial-gradient(circle at center,
+        #ffffff 60%, #f0f0f0 100%);
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.12),
+        0 0 8px rgba(0,0,0,0.08);
+}
+
+/* 制作風景ギャラリーもスポットライト風 */
+.museum-page .image-1 {
+    width: 48%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    box-shadow: 
+        0 6px 18px rgba(0,0,0,0.10),
+        0 0 8px rgba(255,255,255,0.7) inset;
+}
+
+/* 見出し：展示解説っぽく細字体 */
+.museum-page h3 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 18px;
+    letter-spacing: 0.05em;
+    color: #111;
+}
+
+/* リンクもギャラリー風に上品に */
+.museum-page a {
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px solid #aaa;
+}
+.museum-page a:hover {
+    color: #000;
+    border-color: #000;
+}
+
+/* ===== スマホ ===== */
+@media (max-width: 768px) {
+    .museum-page .panel {
+        flex-direction: column;
+        padding: 40px 25px;
+    }
+    .museum-page .panel .photo,
+    .museum-page .panel .text-area {
+        flex: 100%;
+    }
+    .museum-page .image-1 {
+        width: 100%;
+    }
+}
+/* ================================
+   写真ギャラリーを横に並べる
+================================ */
+.museum-page .gallery-row {
+    display: flex;
+    flex-wrap: nowrap;      /* 折り返さず横並び */
+    gap: 20px;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 1100px;
+}
+
+/* 個々の写真（スポットライト風デザイン） */
+.museum-page .gallery-row img {
+    width: 25%;
+    min-width: 200px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.10),
+        0 0 10px rgba(255,255,255,0.85) inset;
+    object-fit: cover;
+}
+
+/* スマホは縦並びに自動変更 */
+@media (max-width: 768px) {
+    .museum-page .gallery-row {
+        flex-wrap: wrap;
+    }
+    .museum-page .gallery-row img {
+        width: 48%;
+    }
+}
 

@@ -454,3 +454,32 @@ position: relative;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(170,220,255,0.45);
 }
+
+/* sasa */
+/* 中央寄せ */
+.center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* シンプルおしゃれボタン */
+.simple-btn {
+    display: inline-block;
+    padding: 16px 48px;   /* ← 大きさUP */
+    border: 1.5px solid #222;
+    color: #222;
+    text-decoration: none;
+    font-size: 18px;      /* ← 少し大きめ文字 */
+    border-radius: 8px;   /* ← 少しだけ丸み */
+    transition: 0.25s ease;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+
+.simple-btn:hover {
+    background: #222;
+    color: #fff;
+    transform: translateY(-2px);  /* ← ほんのり浮かせる */
+}
+
+
