@@ -138,3 +138,72 @@ h2 {
 .image-1 {
     margin-bottom: 15px;
   }
+
+/* 流れる画像 */
+.slider-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 60px 0;
+    position: relative;
+}
+
+/* スライド本体 */
+.slider {
+    display: flex;
+    animation: slide 35s linear infinite;
+    will-change: transform;
+}
+
+/* 余白（gapの代わり） */
+.slider a {
+    flex: 0 0 auto;
+    margin-right: 40px;
+}
+
+/* 画像デザイン */
+.slider img {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+
+    background: #fff;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+    transition: 0.4s ease;
+}
+
+/* ホバー */
+.slider a:hover img {
+    transform: translateY(-6px);
+}
+
+/* 無限ループ */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* 左右フェード（演出） */
+.slider-wrapper::before,
+.slider-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+}
+
+.slider-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #f9f9f7, transparent);
+}
+
+.slider-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #f9f9f7, transparent);
+}

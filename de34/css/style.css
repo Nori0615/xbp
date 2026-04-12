@@ -4,841 +4,121 @@
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
 /* フォントを指定したいところで */
 
-/* index,hp1,hp2内　設定 */
-#logo-1 {
-    width: 70px;
-    height: auto;
-}
-#logo-1{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;  
-    object-fit: cover;   
-}
-#logo-1{
-    margin-left: 30px;
-}
-#index-h1{
-    margin-left: 24px;
-}
-#index-h2{
-    margin-left: 50px;
-}
-#disc{
-    list-style-type:disc;
-}
-.margin-left-0{
-    margin-left: 0px;
-    padding: 0px;
-}
-#margin-left-1{
-    margin-left: 27px;
-}
-.pic{
-  border: 3px solid #000; 
+/* 全体：余白を主役に */
+body.hp-index {
+    margin: 0;
+    font-family: "Noto Serif JP", "Helvetica Neue", serif;
+    background: #f8f8f6;
+    color: #1a1a1a;
 }
 
-
-
-
-
-
-/* first.html*/
-html{
-    font-family: "Noto Sans JP", sans-serif;
-}
-
-.pop{
-    font-family: 'Poppins', sans-serif;
-}
-
-/*aaaaaa*/
-.container{
-    width: 90%;
-    max-width: 1120px;
-    margin: 0 auto;
-    position: relative;
-}
-.container-1{
-  display: flex;
-  gap: 20px; 
-}
-.container-2{
-    width: 90%;
-    max-width: 1120px;
-    margin:0 auto;
-    position: center;
-}
-.left-1, .right-1 {
-  flex: 0.2; 
-}
-.left-2, .right-2 {
-  flex: 0.5; 
-}
-.flex-1{
-    display: flex;
-    align-items: center;
-}
-.flex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.text-center{
-    text-align: center;
-}
-/*header*/
- header{
-    padding: 27px 0;
-
-}
-.logo{
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-}
-.logo span{
-    color: #ff4530;
-}
-.logo span-1{
-    color: blue;
-}
-.header_menu li{
-    margin-left: 40px;
-}
-.header_menu li a{
-    transition: .3s;
-}
-.header_menu li a:hover {
-    color: #ff4530;
-    transition: .3s;
-}
-.header_menu li{
-    font-size: 25px;
-}
-
-ul{
-    padding-left: 0;
-}
-#no-list{
-    list-style: none;
-}
-#a-color-black{
-    color: #000000;
-}
-.link-no-underline {
-    text-decoration: none;
-}
-#p-size-a{
-    font-size: 30px;
-}
-
-/*main*/
-#hero{
-    background-image: url(../images/werdrdr.png);
-    background-position: center;
-    background-size: cover;
-    height: 540px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 90px;   
-    overflow: hidden;
-}
-#hero-2{
-    background-image: url(../images/werdrdr.png);
-    background-position: center;
-    background-size: cover;
-    height: 540px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 90px;   
-    overflow: hidden;
-}
-#heo::before {
- content:'';
- width: 100%;
- height: 100%;
- background-color: #000000;
- position: absolute;
- top: 0;
- left: 0;
- opacity: 0.2;
- z-index: 1;
-}
-.hero_inner{
-    z-index: 2;
-    color: #ffffff;
-    width: 100%;
-    text-align: center;
-}
-.hero_inner-1{
-    z-index: 2;
-    color: blue;
-    width: 100%;
-    text-align: center;
-}
-.hero_inner p{
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 16px;
-}
-.hero_inner h1{
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
-
-
-
-/* git */
-#concept{
-    margin-bottom: 120px;
-}
-.title{
-    font-size: 35px;
-    font-weight: 500;
-    color: #ff4530;
-    margin-bottom: 60px;
-}
-.title-1{
-    font-size: 35px;
-    font-weight: 500;
-    color: blue;
-    margin-bottom: 60px;
-}
-#concept h3{
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 60px;
-}
-.column-2{
-    width: 48%;
-}
-
-.text{
-    line-height: 2;
-}
-.text-1{
-    font-size: 20px;
-}
-.concept-img{
-    background-image: url(../images/git\ ロゴ.png);
-    background-position: center;
-    background-size: cover;
-    height: 200px;
-    border-radius: 20px;
-}
-.concept-img-1{
-    background-image: url(../images/HTML5_Badge.svg-2.svg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
-}
-.concept-img-2{
-    background-image: url(../images/glaff\ teiten.png);
-    background-position: center;
-    background-size: cover;
-    height: 300px;
-    border-radius: 20px;
-}
-.heading{
-    font-family:'Dancing Script', cursive;
-    font-size: 200px;
-    font-weight: 700;
-    color: #ff4530;
-    opacity: 0.1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateY(-30%);
-    z-index: -1;
-}
-.heading-1{
-    font-family:'Dancing Script', cursive;
-    font-size: 200px;
-    font-weight: 700;
-    color: blue;
-    opacity: 0.1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateY(-30%);
-    z-index: -1;
-}
-
-/* sa-bisu  */
-#service{
-    margin-bottom: 120px;
-}
-.service_inner{
-margin-bottom: 40px;
-position: relative;
-}
-.column-40 {
-    width: 40%;
-}
-.column-55{
-    width: 55%;
-}
-#service img{
-    border-radius: 20px;
-}
-#service h3{ 
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 24px;
-}
-.bbb{
-    background-color: azure;
-}
-/* aaa */
-/* =========================
-   💧 水ガラス＋光の粒アニメーション 完全版
-   ========================= */
-.hp-index {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding: 60px 20px;
-    overflow-y: auto;
-    background: linear-gradient(180deg, #eaf8ff 0%, #fdfdff 100%);
-    font-family: "Poppins", "Noto Sans JP", sans-serif;
-    z-index: 0;
-}
-
-/* 柔らかい光の背景 */
-.hp-index::before {
-    content: "";
+/* ロゴ：控えめ */
+#logotohome {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 25% 25%, rgba(190, 240, 255, 0.6), transparent 60%),
-                radial-gradient(circle at 75% 75%, rgba(240, 255, 255, 0.5), transparent 70%);
-    filter: blur(90px);
-    z-index: -1; /* 背景を最背面に */
+    top: 30px;
+    left: 40px;
 }
 
-/* =========================
-   💎 白いガラスカード
-   ========================= */
-.hp-index .content-card {
-    position: relative;
-    z-index: 2;
-    width: min(90%, 750px);
-    padding: 50px 40px;
-    border-radius: 32px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.7), rgba(220,245,255,0.35));
-    backdrop-filter: blur(25px) saturate(180%);
-    -webkit-backdrop-filter: blur(25px) saturate(180%);
-    border: 1.5px solid rgba(255,255,255,0.6);
-    box-shadow: 0 10px 35px rgba(160,200,255,0.25),
-                inset 0 3px 8px rgba(255,255,255,0.6);
-    transition: all 0.5s ease;
+#logo-1 {
+    width: 55px;
+    opacity: 0.7;
+    transition: 0.4s;
 }
 
-.hp-index .content-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(150,210,255,0.35),
-                inset 0 3px 10px rgba(255,255,255,0.6);
+#logo-1:hover {
+    opacity: 1;
 }
 
-.hp-index .content-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.7), rgba(180,230,255,0.25));
-    pointer-events: none;
+/* カード：展示空間 */
+.content-card {
+    max-width: 520px;
+    margin: 140px auto;
+    padding: 70px 50px;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px #e5e5e5; /* 枠だけ */
+    text-align: left;
 }
 
-/* =========================
-   テキスト
-   ========================= */
-.hp-index h1, h2, p {
-    text-align: center;
-    z-index: 3;
-    margin: 15px 0;
-    color: rgba(30,60,90,0.9);
+/* タイトル */
+.index-h1 {
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
 }
 
-.hp-index h1 {
-    font-size: 2.3rem;
-    font-weight: 600;
-    color: #2b6ca6;
-    text-shadow: 0 2px 8px rgba(255,255,255,0.9);
+/* サブタイトル */
+.index-h2 {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
 }
 
-.hp-index h2 {
-    font-size: 1.4rem;
-    color: #3c7eb1;
-}
-
-.hp-index p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-
-/* =========================
-   💠 ボタン（水っぽく立体）
-   ========================= */
-.hp-index .glass-button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 38px;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #1a4f72;
-    text-decoration: none;
-    border-radius: 25px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.55), rgba(180,230,255,0.3));
-    border: 1px solid rgba(255,255,255,0.7);
-    backdrop-filter: blur(15px) saturate(200%);
-    -webkit-backdrop-filter: blur(15px) saturate(200%);
-    box-shadow: inset 0 3px 8px rgba(255,255,255,0.7),
-                0 6px 18px rgba(140,210,255,0.5);
-    transition: all 0.3s ease;
-}
-
-.hp-index .glass-button:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(145deg, rgba(255,255,255,0.75), rgba(190,245,255,0.4));
-    box-shadow: inset 0 2px 10px rgba(255,255,255,0.8),
-                0 10px 25px rgba(130,200,255,0.6);
-}
-
-.hp-index .glass-button:active {
-    transform: translateY(2px);
-    box-shadow: inset 0 3px 6px rgba(150,210,255,0.4),
-                0 3px 8px rgba(100,180,255,0.3);
-}
-
-/* =========================
-   💕 リストリンク
-   ========================= */
-.hp-index ol, .hp-index ul {
+/* リスト */
+ol {
     list-style: none;
     padding: 0;
-    margin: 35px 0;
-    text-align: center;
-}
-
-.hp-index li {
-    margin: 12px 0;
-}
-
-.hp-index li a {
-    display: inline-block;
-    padding: 8px 22px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.4);
-    color: #2a598f;
-    font-weight: 500;
-    text-decoration: none;
-    box-shadow: 0 2px 6px rgba(170,220,255,0.3);
-    transition: all 0.3s ease;
-}
-
-.hp-index li a:hover {
-    background: rgba(220,245,255,0.85);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(170,220,255,0.45);
-}
-
-/* sasa */
-/* 中央寄せ */
-.center {
-    text-align: center;
-    margin-top: 40px;
-}
-
-/* シンプルおしゃれボタン */
-.simple-btn {
-    display: inline-block;
-    padding: 16px 48px;   /* ← 大きさUP */
-    border: 1.5px solid #222;
-    color: #222;
-    text-decoration: none;
-    font-size: 18px;      /* ← 少し大きめ文字 */
-    border-radius: 8px;   /* ← 少しだけ丸み */
-    transition: 0.25s ease;
-    font-weight: 500;
-    letter-spacing: 0.7px;
-}
-
-.simple-btn:hover {
-    background: #222;
-    color: #fff;
-    transform: translateY(-2px);  /* ← ほんのり浮かせる */
-}
-/* ===========================
-   デジタルファブリケーション専用
-   海外新聞・雑誌風デザイン
-   =========================== */
-
-.fab-page {
-  font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
-  background-color: #fbfaf8;
-  color: #222;
-  line-height: 1.8;
-  padding: 60px 40px;
-  max-width: 880px;
-  margin: 60px auto;
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e8e6e3;
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* --- 背景にわずかな紙の質感 --- */
-.fab-page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.04), transparent 60%);
-  pointer-events: none;
-}
-
-/* --- ロゴエリア（控えめ＆上品） --- */
-.fab-page .logotohome {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.fab-page .logotohome img {
-  width: 130px;
-  opacity: 0.9;
-  border-bottom: 2px solid #111;
-  padding-bottom: 6px;
-  filter: grayscale(100%) contrast(120%);
-  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
-}
-
-.fab-page .logotohome img:hover {
-  opacity: 1;
-  filter: none;
-  transform: scale(1.04);
-}
-
-/* --- タイトルエリア --- */
-.fab-page h1 {
-  text-align: center;
-  font-size: 3em;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 0.3em;
-  color: #111;
-  text-transform: uppercase;
-  position: relative;
-}
-
-.fab-page h1::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: #111;
-  margin: 12px auto 0;
-}
-
-.fab-page h2 {
-  text-align: center;
-  font-size: 1.4em;
-  font-style: italic;
-  color: #555;
-  margin-bottom: 2.5em;
-  letter-spacing: 0.5px;
-}
-
-/* --- リスト部分（記事リンク風） --- */
-.fab-page ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-}
-
-.fab-page li.disc {
-  border-bottom: 1px solid #ddd;
-  padding: 20px 10px 20px 20px;
-  font-size: 1.1em;
-  position: relative;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.fab-page li.disc:last-child {
-  border-bottom: none;
-}
-
-/* --- 装飾アイコン（レトロ感を演出） --- */
-.fab-page li.disc::before {
-  content: "❖";
-  position: absolute;
-  left: -25px;
-  top: 23px;
-  font-size: 0.7em;
-  color: #a66b55;
-  opacity: 0.8;
-}
-
-/* --- リンクスタイル --- */
-.fab-page li.disc a {
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  font-family: "Lora", serif;
-}
-
-.fab-page li.disc a:hover {
-  color: #a66b55;
-}
-
-/* --- ホバー時に少し浮く感じ --- */
-.fab-page li.disc:hover {
-  background-color: #f7f6f3;
-  transform: translateX(3px);
-}
-
-/* --- スマホ対応 --- */
-@media (max-width: 600px) {
-  .fab-page {
-    padding: 40px 20px;
-    margin: 20px;
-  }
-
-  .fab-page h1 {
-    font-size: 2.2em;
-  }
-
-  .fab-page h2 {
-    font-size: 1.1em;
-  }
-
-  .fab-page li.disc {
-    font-size: 1em;
-    padding: 15px;
-  }
-
-  .fab-page li.disc::before {
-    left: -18px;
-    top: 20px;
-  }
-}
-/* ============================
-   スマホ対応（デザインはそのまま）
-   ============================ */
-@media (max-width: 800px) {
-
-  /* 画面左右の余白をしっかり確保 */
-  html, body {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0 16px;
-  }
-
-  .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
-  }
-
-  /* 横並びの要素を縦並びへ */
-  .flex {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* カラム幅を100%に */
-  .column-40,
-  .column-55 {
-    width: 100%;
-  }
-
-  /* 画像の幅を調整してはみ出しを防ぐ */
-  img,
-  .image-1 {
-    width: 100%;
-    height: auto;
-  }
-
-  /* 見出しの左マージン調整（スマホで見やすく） */
-  h2, h3, p, div {
-    margin-left: 0.6em;
-  }
-
-  /* プロジェクト画像の間隔調整 */
-  .image-1 {
-    margin-bottom: 15px;
-  }
-}
-/* 2.html */
-/* ================================
-   museum-page の中だけに適用
-   美術館スポットライト風デザイン
-================================ */
-
-/* 背景をほんのり暗め（展示室の雰囲気） */
-.museum-page {
-    font-family: "Noto Sans JP", "Poppins", sans-serif;
     margin: 0;
-    padding: 40px 20px;
-    background: #f3f3f3;
-    color: #222;
-    line-height: 1.8;
 }
 
-/* タイトル（展示タイトルっぽい） */
-.museum-page h1 {
-    font-size: 2.6rem;
-    text-align: center;
-    margin-bottom: 80px;
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    color: #111;
-}
-
-/* ===== スポットライト付きの展示パネル ===== */
-.museum-page .panel {
+/* 各行：作品ラベル */
+ol li {
     position: relative;
-    display: flex;
-    gap: 45px;
-    align-items: flex-start;
-    margin: 80px auto;
-    padding: 60px 40px;
-    max-width: 1100px;
-
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #e1e1e1;
-
-    /* スポットライト（上から光が落ちてくる感じ） */
-    box-shadow: 
-        0 -60px 150px -30px rgba(255, 255, 255, 0.8) inset,
-        0 0 30px rgba(0, 0, 0, 0.08);
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e5e5;
 }
 
-/* 写真と文章のレイアウト */
-.museum-page .panel .photo {
-    flex: 0 0 40%;
-    min-width: 270px;
+/* 左の番号をデザイン化 */
+ol li::before {
+    content: counter(item) ".";
+    counter-increment: item;
+    position: absolute;
+    left: -40px;
+    color: #bbb;
+    font-size: 12px;
 }
 
-.museum-page .panel .text-area {
-    flex: 1;
-    font-size: 1.05rem;
-    color: #333;
-}
-
-/* 画像を作品展示っぽく（額縁＋スポットライト） */
-.museum-page .panel img {
-    width: 100%;
-    background: radial-gradient(circle at center,
-        #ffffff 60%, #f0f0f0 100%);
-    padding: 14px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-shadow: 
-        0 10px 25px rgba(0,0,0,0.12),
-        0 0 8px rgba(0,0,0,0.08);
-}
-
-/* 制作風景ギャラリーもスポットライト風 */
-.museum-page .image-1 {
-    width: 48%;
-    background: #fff;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-    box-shadow: 
-        0 6px 18px rgba(0,0,0,0.10),
-        0 0 8px rgba(255,255,255,0.7) inset;
-}
-
-/* 見出し：展示解説っぽく細字体 */
-.museum-page h3 {
-    font-size: 1.3rem;
-    font-weight: 300;
-    margin-bottom: 18px;
-    letter-spacing: 0.05em;
-    color: #111;
-}
-
-/* リンクもギャラリー風に上品に */
-.museum-page a {
-    color: #555;
+/* リンク */
+ol li a {
     text-decoration: none;
-    border-bottom: 1px solid #aaa;
+    color: #1a1a1a;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: relative;
 }
-.museum-page a:hover {
+
+/* 下線アニメーション（ここがポイント） */
+ol li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 1px;
+    background: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+/* ホバーで線が伸びる */
+ol li a:hover::after {
+    width: 100%;
+}
+
+/* ホバー時ちょい動く */
+ol li a:hover {
     color: #000;
-    border-color: #000;
+    letter-spacing: 2px;
 }
 
-/* ===== スマホ ===== */
-@media (max-width: 768px) {
-    .museum-page .panel {
-        flex-direction: column;
-        padding: 40px 25px;
+/* スマホ */
+@media (max-width: 600px) {
+    .content-card {
+        margin: 100px 20px;
+        padding: 50px 30px;
     }
-    .museum-page .panel .photo,
-    .museum-page .panel .text-area {
-        flex: 100%;
-    }
-    .museum-page .image-1 {
-        width: 100%;
+
+    ol li::before {
+        left: -25px;
     }
 }
-/* ================================
-   写真ギャラリーを横に並べる
-================================ */
-.museum-page .gallery-row {
-    display: flex;
-    flex-wrap: nowrap;      /* 折り返さず横並び */
-    gap: 20px;
-    justify-content: center;
-    margin: 40px auto;
-    max-width: 1100px;
-}
-
-/* 個々の写真（スポットライト風デザイン） */
-.museum-page .gallery-row img {
-    width: 25%;
-    min-width: 200px;
-    background: #fff;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    box-shadow:
-        0 6px 18px rgba(0,0,0,0.10),
-        0 0 10px rgba(255,255,255,0.85) inset;
-    object-fit: cover;
-}
-
-/* スマホは縦並びに自動変更 */
-@media (max-width: 768px) {
-    .museum-page .gallery-row {
-        flex-wrap: wrap;
-    }
-    .museum-page .gallery-row img {
-        width: 48%;
-    }
-}
-
-
-
-
