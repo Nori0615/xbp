@@ -164,8 +164,8 @@ h2 {
 
 /* 画像デザイン */
 .slider a img {
-    width: 280px;
-    height: 180px;
+    width: 280px !important;
+    height: 180px !important;
     object-fit: cover;
 }
 
