@@ -1,187 +1,140 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-    content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>第一回まとめ</title>
 
+<link rel="stylesheet" href="./css/style.css">
 
-
-    <title>のりの第一回</title>
-   
-      <link rel="stylesheet" href="./css/style.css">
-      <!--google font-->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        
-        <div class="container fl pop">
-             <a href="" class="logo link-no-underline" id="a-color-black">
-                
-                <span>第一回</span> のまとめ
-             </a>
-            <section id="" class="container">
-                <div class="hero_inner">
-                    <h1>git・htmlとは何か？</h1>
-                </div>
-            </section>
-              <p id="p-size-a">目次</p>
-            <nav>
-                <ol class="header_menu flex-1">
-                 <li><a href="#git" id="a-color-black">GITについて</a></li>
-                 <li><a href="#html" id="a-color-black">HTMLについて</a></li>
-                </ol>  
-             </nav>
-        </div>
-       
-    </header>
-    
-    <main>
-        
-        <!-- gitについて -->
-        <section id="git" class="container">
-            <div class="heading">GIT</div>
-            <h2 class="title pop">GIT</h2>
-            <h3>そもそもgitとは？</h3>
-            <div class="flex">
-                <div class="column-2">
-                    <p class="text">
-                        Gitは,<h4>分散型の「バージョン管理システム」です。</h4><br>
-                        たとえば、あなたがプログラムやドキュメントを作っているとします。<br>
-                        途中で間違えたり、以前の状態に戻したくなったりしたことはありませんか?<br>
-                        Gitを使うと：<br>
-                    </p>
-                      <ul>
-                            <li>いつでも過去の状態に戻れる</li>
-                            <li>誰がいつ何を変更したか記録できる</li>
-                            <li>チームで同時に作業しても衝突しにくい</li>
-                       </ul>
-                    <p> 
-                        という便利な機能が使えます！<br>
-                    </p>
-                </div>
-                <div class="column-2 concept-img"></div>
-                
-            </div>
-        </section>
 
-        <section class="container">
-            <h2 class="title pop"></h2>
-            <div class="service_inner flex">
-                <div class="column-40">
-                    <img src="./images/リポジトリ解説画像.png" 
-                    width="100%" alt="">
-                </div>
-                <div class="column-55">
-                    <div class="heading">repository</div>
-                    <h3>リポジトリーについて</h3>
-                    <p class="text">
-                        リポジトリー = プロジェクトのファイルと変更履歴をまとめて保存する場所です。<br>
-                        ・ローカルリポジトリー<br>
-                        あなたのパソコンの中にあるリポジトリー<br>                    
-                        Gitコマンドは、基本的にこのローカルリポジトリーを操作します<br>
-                        ・リモートリポジトリー（例：GitHub）<br>
-                        ネット上にある、共有用のリポジトリー<br>
-                        チームで共同開発するときに使います<br>
-                    </p>
-                </div>
-            </div>
-            <div class="service_inner flex">
-                <div class="column-40">
-                    <img src="./images/snapshot powerpoint.png" 
-                    width="100%" alt="">
-                    
-                </div>
-                <div class="column-55">
-                    <div class="heading">snapshot</div>
-                    <h3>Gitは「スナップショット方式」の記録方法</h3>
-                    <p class="text">
-                        Gitはファイルの変更を「スナップショット（瞬間の写し）」として記録していきます。<br>
-                        Gitは「丸ごと記録して、変わっていないものは使い回す」<br>
-                        たとえば：<br>
-                        1回目：ファイルAとBとCの状態を保存<br>
-                        2回目：Aだけ変わったら、BとCは前と同じものを参照する<br>
-                    </p>
-                </div>
-            </div>
-        </section>
+<body class="hp-index">
 
-        <!-- htnlについて -->
-        <section id="html" class="container">
-            <div class="heading">HTML</div>
-            <h2 class="title pop">HTML</h2>
-            <h3>そもそもHTMLとは？</h3>
-            <div class="flex">
-                <div class="column-2">
-                    <p class="text">
-                        HTML（エイチティーエムエル）は、<br>
-                        HyperText Markup Language の略で、<br>
-                        <h4>ウェブページを作るための言語です。</h4><br>
-                    </p>
-                </div>
-                <div class="column-2 concept-img-1"></div>
-                
-            </div>
-        </section>
-    
-        <section class="container">
-            <h2 class="title pop"></h2>
-            <div class="service_inner flex">
-                <div class="column-40">
-                    <img src="./images/基本タグ画像.png" 
-                    width="100%" alt="">
-                </div>
-                <div class="column-55">
-                    <div class="heading">tag</div>
-                    <h3>タグと要素の基本ルール</h3>
-                    <p class="text">
-                        ・HTMLはタグで要素を囲んで使うのが基本<br>
-                        ・要素は多くの場合「開始タグ」と「終了タグ」でワンセット<br>
-                        ・属性を使って追加情報を与えられる<br>
-                    </p>
-                </div>
-            </div>
-            <div class="service_inner flex">
-                <div class="column-40">
-                    <img src="./images/html css java logo.jpg" 
-                    width="100%" alt="">
-                    <p></p>
-                </div>
-                <div class="column-55">
-                    <div class="heading">css</div>
-                    <h3>HTMLはCSSやJavaScriptと連携して使うのが基本</h3>
-                    <p class="text">
-                        HTMLだけでは「見た目」や「動き」を制御できません。これらはそれぞれ、CSSとJavaScriptが担います。<br>
-                    </p>
-                    <ul>
-                        <li>CSS：色、レイアウト、フォントなどの「見た目（デザイン）」を担当</li>
-                        <li>JavaScript：クリックやスクロールなどに反応する「動作（インタラクション）」を担当</li>
-                    </ul>
-                    <p>HTMLは「骨組み」であり、CSSとJSがそれを「装飾・動かす」イメージです。</p>
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <span class="title">第一回まとめ</span>
+    </a>
+  </div>
+</header>
 
-                
-                </div>
-            </div>
-        
+<main>
 
-        </section>
-        <section class="container">
-            <h2></h2>
-            <h2>制作時参考にした動画</h2>
-            <div class="video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/GXu-7d3yA_U?si=XxWLnUXPpuHxx1-1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </div>
-        </section>
+<section class="container card">
+  <h1>Arduinoとは？</h1>
+  <p>
+    電子工作でよく使われるマイコンボードです。<br>
+    LEDを光らせたり、モーターを作動させたり、さまざまなものを作成できます。<br><br>
 
-    </main>
-    
-    
-    
+    使用機材<br>
+    ・LED<br>
+    ・10KΩ抵抗<br>
+    ・ジャンパー線<br>
+    ・ブレッドボード<br>
+    ・CdSセル
+  </p>
+</section>
+
+<section class="container card">
+  <h1>Lチカ</h1>
+  <p>LEDをチカチカさせること</p>
+
+  <h2>プログラム</h2>
+  <div class="code">
+<pre><code>
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(500);
+  digitalWrite(13, LOW);
+  delay(500);
+}
+</code></pre>
+  </div>
+</section>
+
+<section class="container card">
+  <h1>明るさセンサー</h1>
+  <p>
+    CdSセルで明るさを検知し、暗いときはLEDが光る仕組み
+  </p>
+
+  <h2>プログラム</h2>
+  <div class="code">
+<pre><code>
+const int sensorPin = A1;
+const int ledPin = 9;
+int threshold = 280;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  int val = analogRead(sensorPin);
+
+  if (val > threshold) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+
+  delay(500);
+}
+</code></pre>
+  </div>
+</section>
+
+<section class="container card">
+  <h1>NeoPixel</h1>
+  <p>フルカラーLEDで自由に色を変えられる</p>
+
+  <h2>プログラム</h2>
+  <div class="code">
+<pre><code>
+#include &lt;Adafruit_NeoPixel.h&gt;
+#define PIN 9
+#define NUMPIXELS 5
+
+int brightness = 50;
+
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+void setup() {
+  pixels.begin();
+  pixels.setBrightness(brightness);
+  randomSeed(analogRead(0));
+}
+
+void loop() {
+  pixels.clear();
+
+  for (int i = 0; i < NUMPIXELS; i++) {
+    int r = random(256);
+    int g = random(256);
+    int b = random(256);
+
+    pixels.setPixelColor(i, pixels.Color(r, g, b));
+    pixels.show();
+    delay(500);
+  }
+}
+</code></pre>
+  </div>
+</section>
+
+<section class="container card">
+  <h1>感想</h1>
+  <p>難しそうだったが、作れる作品の幅が広がりそうで可能性を感じた。</p>
+</section>
+
+</main>
+
 </body>
-
 </html>
