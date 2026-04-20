@@ -1,98 +1,92 @@
 @charset "utf-8";
 
-/* フォント */
+/* ===== ベース ===== */
 body {
-  font-family: "Noto Sans JP", "Poppins", sans-serif;
+  margin: 0;
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  background: linear-gradient(180deg, #eef7ff, #ffffff);
+}
+
+/* ===== レイアウト ===== */
+.hp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* ===== ヘッダー ===== */
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== カード ===== */
+.card {
+  width: min(90%, 420px);
+  padding: 50px 40px;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(18px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  text-align: center;
+}
+
+/* ===== タイトル ===== */
+h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.sub {
+  margin: 8px 0 30px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===== リスト ===== */
+.list {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-/* ======================
-   背景（水ガラス系）
-====================== */
-.hp-index {
-  background: linear-gradient(180deg, #eaf8ff 0%, #ffffff 100%);
-  min-height: 100vh;
-  padding: 40px 20px;
+.list li {
+  margin: 12px 0;
 }
 
-/* ======================
-   共通レイアウト
-====================== */
-.container {
-  max-width: 900px;
-  margin: 0 auto 40px;
-}
-
-/* ======================
-   ヘッダー
-====================== */
-.header-inner {
-  text-align: center;
-}
-
-.logo {
-  text-decoration: none;
-}
-
-.title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #2b6ca6;
-}
-
-/* ======================
-   カード（メインデザイン）
-====================== */
-.card {
-  padding: 30px;
-  border-radius: 20px;
-
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(12px);
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-/* ======================
-   テキスト
-====================== */
-h1 {
-  text-align: center;
-  font-weight: 500;
-  color: #2b6ca6;
-}
-
-h2 {
-  margin-top: 20px;
-  color: #3c7eb1;
-}
-
-p {
-  line-height: 1.8;
-  text-align: center;
-}
-
-/* ======================
-   コードブロック
-====================== */
-.code {
-  margin-top: 15px;
-  padding: 20px;
+.list a {
+  display: block;
+  padding: 12px;
   border-radius: 12px;
 
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(8px);
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-
-  overflow-x: auto;
+  background: rgba(255,255,255,0.6);
+  transition: 0.25s;
 }
 
-pre {
-  margin: 0;
-}
-
-code {
-  font-family: Consolas, monospace;
-  font-size: 14px;
+.list a:hover {
+  transform: translateY(-3px);
+  background: #dff3ff;
 }

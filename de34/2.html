@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>第一回まとめ</title>
+
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="hp-index">
+
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <span class="title">第一回まとめ</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<section class="container card">
+  <h1>Arduinoとは？</h1>
+  <p>
+    電子工作でよく使われるマイコンボードです。<br>
+    LEDを光らせたり、モーターを作動させたり、さまざまなものを作成できます。<br><br>
+
+    使用機材<br>
+    ・LED<br>
+    ・10KΩ抵抗<br>
+    ・ジャンパー線<br>
+    ・ブレッドボード<br>
+    ・CdSセル
+  </p>
+</section>
+
+<section class="container card">
+  <h1>Lチカ</h1>
+  <p>LEDをチカチカさせること</p>
+
+  <h2>プログラム</h2>
+  <div class="code">
+<pre><code>
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(500);
+  digitalWrite(13, LOW);
+  delay(500);
+}
+</code></pre>
+  </div>
+</section>
+
+<section class="container card">
+  <h1>明るさセンサー</h1>
+  <p>
+    CdSセルで明るさを検知し、暗いときはLEDが光る仕組み
+  </p>
+
+  <h2>プログラム</h2>
+  <div class="code">
+<pre><code>
+const int sensorPin = A1;
+const int ledPin = 9;
+int threshold = 280;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  int val = analogRead(sensorPin);
+
+  if (val > threshold) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+
+  delay(500);
+}
+</code></pre>
+  </div>
+</section>
+
+<section class="container card">
+  <h1>NeoPixel</h1>
+  <p>フルカラーLEDで自由に色を変えられる</p>
+
+  <h2>プログラム</h2>
+  <div class="code">
+<pre><code>
+#include &lt;Adafruit_NeoPixel.h&gt;
+#define PIN 9
+#define NUMPIXELS 5
+
+int brightness = 50;
+
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+void setup() {
+  pixels.begin();
+  pixels.setBrightness(brightness);
+  randomSeed(analogRead(0));
+}
+
+void loop() {
+  pixels.clear();
+
+  for (int i = 0; i < NUMPIXELS; i++) {
+    int r = random(256);
+    int g = random(256);
+    int b = random(256);
+
+    pixels.setPixelColor(i, pixels.Color(r, g, b));
+    pixels.show();
+    delay(500);
+  }
+}
+</code></pre>
+  </div>
+</section>
+
+<section class="container card">
+  <h1>感想</h1>
+  <p>難しそうだったが、作れる作品の幅が広がりそうで可能性を感じた。</p>
+</section>
+
+</main>
+
+</body>
+</html>
