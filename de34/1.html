@@ -10,12 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="hp">
+<body>
 
 <header class="header">
-  <a href="./index.html" class="logo">
-    <img src="./images/0_XBlogo.png" alt="home">
-  </a>
+  <div class="container header-inner">
+    <a href="./index.html" class="logo">
+      <img src="./images/0_XBlogo.png" alt="home">
+    </a>
+  </div>
 </header>
 
 <main class="container">
@@ -58,7 +60,79 @@ void loop() {
 
   <section class="card">
     <h1>明るさセンサー</h1>
-    <p>CdSセルで明るさを検知し、暗いときはLEDが光る仕組み</p>
+    <p>
+      CdSセルで明るさを検知し、暗いときはLEDが光る仕組み
+    </p>
+
+    <h2>プログラム</h2>
+    <div class="code">
+<pre><code>
+const int sensorPin = A1;
+const int ledPin = 9;
+int threshold = 280;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  int val = analogRead(sensorPin);
+
+  if (val > threshold) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+
+  delay(500);
+}
+</code></pre>
+    </div>
+  </section>
+
+  <section class="card">
+    <h1>NeoPixel</h1>
+    <p>フルカラーLEDで自由に色を変えられる</p>
+
+    <h2>プログラム</h2>
+    <div class="code">
+<pre><code>
+#include &lt;Adafruit_NeoPixel.h&gt;
+#define PIN 9
+#define NUMPIXELS 5
+
+int brightness = 50;
+
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+void setup() {
+  pixels.begin();
+  pixels.setBrightness(brightness);
+  randomSeed(analogRead(0));
+}
+
+void loop() {
+  pixels.clear();
+
+  for (int i = 0; i < NUMPIXELS; i++) {
+    int r = random(256);
+    int g = random(256);
+    int b = random(256);
+
+    pixels.setPixelColor(i, pixels.Color(r, g, b));
+    pixels.show();
+    delay(500);
+  }
+}
+</code></pre>
+    </div>
+  </section>
+
+  <section class="card">
+    <h1>感想</h1>
+    <p>
+      難しそうだったが、作れる作品の幅が広がりそうで可能性を感じた。
+    </p>
   </section>
 
 </main>

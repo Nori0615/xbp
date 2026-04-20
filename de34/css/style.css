@@ -24,14 +24,21 @@ body {
 }
 
 /* ===== ヘッダー（共通） ===== */
+/* ===== ヘッダー ===== */
 .header {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
 }
 
-/* ===== ロゴ ===== */
+/* 中身を中央に */
+.header-inner {
+  display: flex;
+  justify-content: center; /* 中央配置 */
+  align-items: center;
+}
+
+/* ロゴ */
 .logo img {
   width: 60px;
   height: 60px;
