@@ -5,24 +5,33 @@ body {
   margin: 0;
   font-family: "Poppins", "Noto Sans JP", sans-serif;
   background: linear-gradient(180deg, #eef7ff, #ffffff);
+  color: #333;
 }
 
-/* ===== レイアウト ===== */
+/* ===== 共通コンテナ（これが重要） ===== */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto; /* 全ページ中央揃え */
+}
+
+/* ===== レイアウト（トップ用も詳細ページ用も対応） ===== */
 .hp {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  align-items: center; /* 横中央 */
+  min-height: 100vh;
 }
 
-/* ===== ヘッダー ===== */
+/* ===== ヘッダー（共通） ===== */
 .header {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+/* ===== ロゴ ===== */
 .logo img {
   width: 60px;
   height: 60px;
@@ -31,21 +40,32 @@ body {
 }
 
 .logo img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
 }
 
-/* ===== カード ===== */
+/* ===== カード（どのページでも中央） ===== */
 .card {
   width: min(90%, 420px);
+  margin: 40px auto; /* ←これで全部中央 */
   padding: 50px 40px;
   border-radius: 24px;
 
   background: rgba(255,255,255,0.65);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 
   text-align: center;
+  transition: 0.3s;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-6px);
 }
 
 /* ===== タイトル ===== */
@@ -83,10 +103,47 @@ h1 {
   font-weight: 500;
 
   background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.05);
+
   transition: 0.25s;
 }
 
 .list a:hover {
   transform: translateY(-3px);
   background: #dff3ff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* ===== コード表示（詳細ページ用） ===== */
+.code {
+  text-align: left;
+  background: #1e1e1e;
+  color: #eee;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+pre {
+  margin: 0;
+}
+
+/* ===== アニメーション ===== */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== レスポンシブ ===== */
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 40px 25px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
 }
