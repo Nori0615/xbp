@@ -52,7 +52,8 @@ body {
 
 /* ===== カード（どのページでも中央） ===== */
 .card {
-  width: min(90%, 420px);
+  width: 90%;
+  max-width: 900px;
   margin: 40px auto; /* ←これで全部中央 */
   padding: 50px 40px;
   border-radius: 24px;

@@ -2,137 +2,99 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>第一回まとめ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二回まとめ</title>
 
 <link rel="stylesheet" href="./css/style.css">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="hp-index">
+<body>
 
-<header>
+<header class="header">
   <div class="container header-inner">
-    <a href="#" class="logo">
-      <span class="title">第一回まとめ</span>
+    <a href="./index.html" class="logo">
+      <img src="./images/0_XBlogo.png" alt="home">
     </a>
   </div>
 </header>
 
-<main>
+<main class="container">
 
-<section class="container card">
-  <h1>Arduinoとは？</h1>
-  <p>
-    電子工作でよく使われるマイコンボードです。<br>
-    LEDを光らせたり、モーターを作動させたり、さまざまなものを作成できます。<br><br>
+  <section class="card">
+    <h1>Arduinoとモーター</h1>
+    <p>
+      
 
-    使用機材<br>
-    ・LED<br>
-    ・10KΩ抵抗<br>
-    ・ジャンパー線<br>
-    ・ブレッドボード<br>
-    ・CdSセル
-  </p>
-</section>
+      使用機材<br>
+      ・ステッピングモーター<br>
+      ・モータードライバ<br>
+    </p>
+  </section>
 
-<section class="container card">
-  <h1>Lチカ</h1>
-  <p>LEDをチカチカさせること</p>
+  <section class="card">
+    <h1>モーターを使ったおみくじルーレット</h1>
+    <p>LEDをチカチカさせること</p>
 
-  <h2>プログラム</h2>
-  <div class="code">
+    <h2>プログラム</h2>
+    <div class="code">
 <pre><code>
+const int cdsPin = A0;      
+const int stepPin = 9;     
+const int dirPin = 8;      
+
+const int threshold = 760; 
+
 void setup() {
-  pinMode(13, OUTPUT);
+  pinMode(stepPin, OUTPUT);
+  pinMode(dirPin, OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);
-  delay(500);
-  digitalWrite(13, LOW);
-  delay(500);
-}
-</code></pre>
-  </div>
-</section>
+  int lightValue = analogRead(cdsPin);
 
-<section class="container card">
-  <h1>明るさセンサー</h1>
-  <p>
-    CdSセルで明るさを検知し、暗いときはLEDが光る仕組み
-  </p>
+  if (lightValue < threshold) {
+    // 1. 暗い間は通常速度で回転
+    while (analogRead(cdsPin) < threshold) {
+      stepMotor(1000); 
+    }
 
-  <h2>プログラム</h2>
-  <div class="code">
-<pre><code>
-const int sensorPin = A1;
-const int ledPin = 9;
-int threshold = 280;
-
-void setup() {
-  pinMode(ledPin, OUTPUT);
-}
-
-void loop() {
-  int val = analogRead(sensorPin);
-
-  if (val > threshold) {
-    digitalWrite(ledPin, HIGH);
-  } else {
-    digitalWrite(ledPin, LOW);
+    // 2. 長い時間をかけて減速（スローダウン）
+    Serial.println("Long slowing down...");
+    
+    // speed（待ち時間）を 1000 から 8000 まで、10ずつじわじわ増やす
+    // この数値を大きくするほど、停止までの時間が長くなります
+    for (int speed = 1000; speed < 8000; speed += 10) {
+      stepMotor(speed); 
+    }
+    
+    Serial.println("Complete stop.");
   }
+  
+  delay(100);
+}
 
-  delay(500);
+void stepMotor(int delayTime) {
+  digitalWrite(dirPin, HIGH);
+  digitalWrite(stepPin, HIGH);
+  delayMicroseconds(delayTime);
+  digitalWrite(stepPin, LOW);
+  delayMicroseconds(delayTime);
 }
 </code></pre>
-  </div>
-</section>
+    </div>
+  </section>
 
-<section class="container card">
-  <h1>NeoPixel</h1>
-  <p>フルカラーLEDで自由に色を変えられる</p>
+  
 
-  <h2>プログラム</h2>
-  <div class="code">
-<pre><code>
-#include &lt;Adafruit_NeoPixel.h&gt;
-#define PIN 9
-#define NUMPIXELS 5
-
-int brightness = 50;
-
-Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
-
-void setup() {
-  pixels.begin();
-  pixels.setBrightness(brightness);
-  randomSeed(analogRead(0));
-}
-
-void loop() {
-  pixels.clear();
-
-  for (int i = 0; i < NUMPIXELS; i++) {
-    int r = random(256);
-    int g = random(256);
-    int b = random(256);
-
-    pixels.setPixelColor(i, pixels.Color(r, g, b));
-    pixels.show();
-    delay(500);
-  }
-}
-</code></pre>
-  </div>
-</section>
-
-<section class="container card">
-  <h1>感想</h1>
-  <p>難しそうだったが、作れる作品の幅が広がりそうで可能性を感じた。</p>
-</section>
+  <section class="card">
+    <h1>感想</h1>
+    <p>
+      難しそうだったが、作れる作品の幅が広がりそうで可能性を感じた。
+    </p>
+  </section>
 
 </main>
 
