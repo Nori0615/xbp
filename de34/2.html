@@ -7,10 +7,10 @@
 
 <link rel="stylesheet" href="./css/style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="page">
 
 <header class="header">
   <div class="container header-inner">
@@ -21,24 +21,35 @@
 </header>
 
 <main class="container">
-
   <section class="card">
-    <h1>Arduinoとモーター</h1>
-    <p>
-      
 
+    
+    <h1>モーター制御と応用</h1>
+
+    <!-- 概要 -->
+    <h4>Arduinoとモーター</h4>
+    <p>
+      ステッピングモーターとモータードライバを使い、回転制御を行う。
+    </p>
+
+    <p>
       使用機材<br>
       ・ステッピングモーター<br>
-      ・モータードライバ<br>
+      ・モータードライバ
     </p>
-  </section>
+    </section>
+    <section class="card">
 
-  <section class="card">
-    <h1>モーターを使ったおみくじルーレット</h1>
-    <p>LEDをチカチカさせること</p>
-
-    <h2>プログラム</h2>
-    <div class="code">
+      <!-- 作品 -->
+      <h1>おみくじルーレット</h1>
+      <p>
+        明るい状態から指でセンサーを覆い暗くすると回転開始。<br>
+        指を離して明るくすると、徐々に減速して停止する仕組み。
+      </p>
+      
+  <!-- コード -->
+  <h2>プログラム</h2>
+  <div class="code">
 <pre><code>
 const int cdsPin = A0;      
 const int stepPin = 9;     
@@ -56,23 +67,16 @@ void loop() {
   int lightValue = analogRead(cdsPin);
 
   if (lightValue < threshold) {
-    // 1. 暗い間は通常速度で回転
+
     while (analogRead(cdsPin) < threshold) {
       stepMotor(1000); 
     }
 
-    // 2. 長い時間をかけて減速（スローダウン）
-    Serial.println("Long slowing down...");
-    
-    // speed（待ち時間）を 1000 から 8000 まで、10ずつじわじわ増やす
-    // この数値を大きくするほど、停止までの時間が長くなります
     for (int speed = 1000; speed < 8000; speed += 10) {
       stepMotor(speed); 
     }
-    
-    Serial.println("Complete stop.");
   }
-  
+
   delay(100);
 }
 
@@ -84,18 +88,24 @@ void stepMotor(int delayTime) {
   delayMicroseconds(delayTime);
 }
 </code></pre>
-    </div>
+  </div>
   </section>
-
-  
-
   <section class="card">
-    <h1>感想</h1>
+  <!-- 動画 -->
+  <h2>使用動画</h2>
+  <p>
+    <a href="https://youtube.com/shorts/KRqdtkGpojw?feature=share" target="_blank">
+      ▶ 動画を見る
+    </a>
+  </p>
+  </section>
+  <section class="card">
+    <!-- 感想 -->
+    <h2>感想</h2>
     <p>
-      難しそうだったが、作れる作品の幅が広がりそうで可能性を感じた。
+      コードも配線も難しかったが、前回の内容を応用して作品として完成させることができた。
     </p>
   </section>
-
 </main>
 
 </body>
