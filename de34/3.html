@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第三回まとめ</title>
+
+<link rel="stylesheet" href="./css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="page">
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="./index.html" class="logo">
+      <img src="./images/0_XBlogo.png" alt="home">
+    </a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+
+    
+    <h1>Flaskについて</h1>
+
+    
+    <p>
+      PythonでWebサイトやWebアプリを構築するための「マイクロフレームワーク」です。
+    </p>
+
+    <p>
+      使用機材<br>
+      ・ステッピングモーター<br>
+      ・モータードライバ
+    </p>
+    </section>
+    <section class="card">
+      <h1>基本構成</h1>
+        <div class="code">
+<pre><code>
+from flask import Flask, render_template, request, redirect, url_for
+
+app = Flask(__name__)
+
+
+# 編集ゾーンーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+##ここでルートのURLが指定された時に実行される
+@app.route('/')
+def index():
+    ##index.htmlがレンダリングされる
+    a="Nori"
+    return render_template("index.html",txt=a)
+
+# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+if __name__ == '__main__':
+    app.run()
+
+</code></pre>
+    </div>
+    </section>
+    <section class="card">
+
+      <!-- 作品 -->
+      <h1>プログラム例 for</h1>
+      <p></p>
+<div class="code">
+<pre><code>
+    {% for data in list %} 
+
+
+{% endfor %}
+
+</code></pre>
+</div>
+      <p>html</p>
+<div class="code">
+<pre><code>
+&lt;h1&gt;テスト&lt;/h1&gt;
+&lt;div&gt;
+    &#123;% for i in range(10) %&#125;
+        &#123;&#123;txt&#125;&#125; --- &#123;&#123;i&#125;&#125;&lt;br&gt;
+    &#123;% endfor %&#125;
+&lt;/div&gt;
+</code></pre>
+</div>
+<div class="gallery">
+    <img src="./images//flask1.png" alt="">
+  </div>
+</section>
+
+
+<section class="card">
+  <h1>プログラム例 if</h1>
+  <p>app.py</p>
+  <div class="code">
+<pre><code>
+    {% if ○○ %}
+:
+{% elif ×× %}
+:
+{% else %}
+:
+{% endif %}
+
+</code></pre>
+    </div>
+  <p>html</p>
+  <div class="code">
+<pre><code>
+    &lt;h1&gt;テスト&lt;/h1&gt;
+&lt;div&gt;
+    &#123;% for i in range(10) %&#125;
+        &lt;!-- %2は2で割った余り --&gt;
+        &#123;% if i%2==0 %&#125;
+            &#123;&#123;txt&#125;&#125; --偶数-- &#123;&#123;i&#125;&#125;&lt;br&gt;
+        &#123;% else %&#125;
+            &#123;&#123;txt&#125;&#125; --奇数-- &#123;&#123;i&#125;&#125;&lt;br&gt;
+        &#123;% endif %&#125;
+    &#123;% endfor %&#125;
+&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="gallery">
+    <img src="./images/flask2.png" alt="">
+  </div>
+  </section>
+
+  <section class="card">
+    <h1>csvを表示</h1>
+    <p>app.py</p>
+    <div class="code">
+<pre><code>
+    from flask import Flask, render_template, request, session, redirect, flash, url_for
+from csv import reader
+import os
+
+app = Flask(__name__)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# 編集ゾーンーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+##ここでルートのURLが指定された時に実行される
+@app.route('/')
+def index():
+    #index.htmlがレンダリングされる
+    csv_path = os.path.join(BASE_DIR, 'mmcsv.csv')
+    with open(csv_path, 'r', encoding="utf-8") as csv_file:
+        csv_reader = reader(csv_file)
+        list_mm = list(csv_reader)
+    return render_template("index.html", mmlist=list_mm)
+
+# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+    </div>
+    <p>html</p>
+  <div class="code">
+<pre><code>
+  &lt;h1&gt;テスト&lt;/h1&gt;
+&lt;div&gt;
+    &#123;&#123; mmlist &#125;&#125;
+&lt;/div&gt;
+</code></pre>
+    </div>
+ <div class="gallery">
+    <img src="./images/flask3.png" alt="">
+  </div>
+
+
+    <p>html</p>
+  <div class="code">
+<pre><code>
+  &lt;h1&gt;テスト&lt;/h1&gt;
+&lt;div&gt;
+    &#123;% for data in mmlist %&#125;
+        &#123;&#123; data[1] &#125;&#125;,&#123;&#123; data[3] &#125;&#125;&lt;br&gt;
+    &#123;% endfor %&#125;
+&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="gallery">
+    <img src="./images/flask4.png" alt="">
+  </div>
+
+
+ <p>app.py</p>
+  <div class="code">
+<pre><code>
+from flask import Flask, render_template, request, session, redirect, flash, url_for
+from csv import reader
+import os
+
+app = Flask(__name__)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# 編集ゾーンーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+##ここでルートのURLが指定された時に実行される
+@app.route('/')
+def index():
+    #index.htmlがレンダリングされる
+    with open(os.path.join(BASE_DIR, 'mmcsv.csv'), 'r', encoding="utf-8") as csv_file:
+        csv_reader = reader(csv_file)
+        list_mm = list(csv_reader)
+
+    for data in list_mm:
+        data[3] = "https://www.google.com/maps?q=" + data[3].replace("(","").replace(")","").replace(" ","")
+
+    print(list_mm)
+    return render_template("index.html",mmlist=list_mm)
+
+
+# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+    </div>
+<div class="gallery">
+    <img src="./images/flask5.png" alt="">
+  </div>
+
+     <p>html</p>
+  <div class="code">
+<pre><code>
+  &lt;h1&gt;テスト&lt;/h1&gt;
+&lt;div&gt;
+    &#123;% for data in mmlist %&#125;
+        &#123;% if data[1]=="場所" %&#125;
+            &#123;&#123; data[1] &#125;&#125;&lt;br&gt;
+        &#123;% else %&#125;
+            &lt;a href=&#123;&#123; data[3] &#125;&#125; target="_blank"&gt;&#123;&#123; data[1] &#125;&#125;&lt;/a&gt;&lt;br&gt;
+        &#123;% endif %&#125;
+    &#123;% endfor %&#125;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+  <div class="gallery">
+    <img src="./images/flask6.png" alt="">
+  </div>
+  </section>
+
+  <section class="card">
+    <h1>バックエンドとフロントエンド</h1>
+    <p>
+      <h4>フロントエンド</h4>
+      ユーザーが直接見て操作する部分です。<br>
+      HTML・CSS で見た目を作り、JavaScript（ReactやVueなどのフレームワーク）で動きをつけます。<br>
+
+
+
+      <h4>バックエンド</h4>
+      ユーザーからは見えない部分で、サーバー側で動いています。<br>
+      ログインの認証、商品の在庫チェック、決済処理など「ロジック」を担い、データベースとやり取りしてデータを保存・取得します。<br>
+    </p>
+
+    
+    </section>
+
+ 
+</main>
+
+</body>
+</html>
