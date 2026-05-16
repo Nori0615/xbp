@@ -79,6 +79,34 @@ body {
   }
 }
 
+.card-2 {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 50px 40px;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  text-align: left;
+  transition: 0.3s;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* PCのときだけ広げる */
+@media screen and (min-width: 900px) {
+  .card {
+    max-width: 1200px;
+  }
+}
+
 .card:hover {
   transform: translateY(-6px);
 }
@@ -172,8 +200,8 @@ pre {
 }
 
 .gallery img {
-  width: 45%;
-  border-radius: 16px;
+  width: 60%;
+  border-radius: 18px;
 
   background: #fff;
   padding: 8px;
@@ -186,6 +214,6 @@ pre {
   transform: scale(1.05);
 }
 .gallery img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }

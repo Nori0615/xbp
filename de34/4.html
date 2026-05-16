@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第４回まとめ</title>
+
+<link rel="stylesheet" href="./css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="./index.html" class="logo">
+      <img src="./images/0_XBlogo.png" alt="home">
+    </a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="card">
+    <h1>KU-BizTech</h1>
+    
+  </section>
+  <section class="card-2">
+    <h1>追加した条件</h1>
+    <ul>
+        <li>散歩のルートを決めるアプリを作りたい</li>
+        <li>歩きたい距離もしくは歩きたい時間、現在地（住所か駅名や建物の名前など、もしくはGPS）、往復か片道、を入力することでお散歩ルートを決める。</li>
+        <li>GoogleMapに連携できるといいな</li>
+        <li>出来れば、観光地などきれいな景色があるところならそこを通るようにルートを作ってほしい</li>
+        <li>海や道のないところを通らず、歩道の上を通るようして（詳細に）</li>
+        <li>きれいなUIでお願い</li>
+        <li>Nominatim の日本語住所の解析精度の問題に対応して</li>
+        <li>Zipファイルにして</li>
+        <li>Chat GPTのAPI Keyを持っている。</li>
+        <li>Chat GPTを用いてルートの紹介文や住所検索精度上昇させて</li>
+        <li>Chat GPTが入力された距離、時間からルートを考えてもいい（正確な方で）</li>
+
+    </ul>
+
+  </section>
+
+
+  <section class="card">
+    <h1>お散歩ルートメーカー</h1>
+    <div class="gallery">
+    <img src="./images/osanpo2.png" alt="">
+  </div>
+  <p>
+   <h2>使用動画</h2>
+    <a href="https://youtu.be/7WclAT97Y4g" target="_blank">
+      ▶ 動画を見る
+    </a>
+  </p>
+
+   
+  </section>
+
+  <section class="card">
+    <h1>感想</h1>
+    <p>
+      今回使ったマップがNominatimでGoogleMapとではルートの作り方や精度に差があり、
+      NominatimとGoogleMapでは所要時間や実際の距離が変わってしまうため、
+      実用化を考えるとGoogleMapのAPIを用いて統一したかった。
+    </p>
+  </section>
+
+</main>
+
+</body>
+</html>
