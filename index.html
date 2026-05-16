@@ -1,65 +1,234 @@
+
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>XBP_HP</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./images/xbp.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XBP — nori's portfolio</title>
+<link rel="shortcut icon" href="./images/xbp.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- ロゴ（正方形・枠線なし） -->
-    <logotohome>
-        <a href="./index.html">
-            <img src="./images/0_XBlogo.png" alt="XBPロゴ">
-        </a>
-    </logotohome>
 
-    <main>
-        <h1>XBP</h1>
-        <h2>nori's portfolio</h2>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
 
-        <div class="slider-wrapper">
-            <div class="slider">
-                <!-- 1セット目 -->
-                <a href="./de12/index.html"><img src="images/design12 logo.jpg"></a>
-                <a href="./digi_fab/index.html"><img src="images/desital fablication logo.jpg"></a>
-                <a href="./de34/index.html"><img src="images/design34 logo.jpg"></a>
-                <a href="./de56/index.html"><img src="images/sakura.jpg"></a>
+<!-- ナビゲーション -->
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">XBP</a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Works</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+</nav>
 
-                <!-- 2セット目（完全コピー） -->
-                <a href="./de12/index.html"><img src="images/design12 logo.jpg"></a>
-                <a href="./digi_fab/index.html"><img src="images/desital fablication logo.jpg"></a>
-                <a href="./de34/index.html"><img src="images/design34 logo.jpg"></a>
-                <a href="./de56/index.html"><img src="images/sakura.jpg"></a>
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-bg-lines">
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
+  </div>
 
-            </div>
-        </div>
+  <p class="hero-year">2025</p>
+  <p class="hero-eyebrow">nori's portfolio</p>
 
-        <!-- エモ系画像ボタン -->
-        <div class="portfolio-buttons">
-            <a href="./de12/index.html">
-                <img src="./images/umi torii.jpg" alt="デザイン演習Ⅰ・Ⅱ">
-                <span>デザイン演習Ⅰ・Ⅱ</span>
-            </a>
+  <h1 class="hero-title">
+    <span class="line"><span class="word">Design</span></span>
+    <span class="line"><span class="word">&amp; Craft</span></span>
+    <span class="line"><span class="word">Works</span></span>
+  </h1>
 
-            <a href="./digi_fab/index.html">
-                <img src="./images/hune kanrannsya .jpg" alt="デジタルファブリケーション">
-                <span>デジタルファブリケーション</span>
-            </a>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      空間とプロダクトを結ぶデザインの記録。<br>
+      静けさの中に宿る、ものの美しさ。
+    </p>
+    <a href="#portfolio" class="hero-cta">
+      <span>View works</span>
+      <span>→</span>
+    </a>
+  </div>
 
-            <a href="./de34/index.html">
-                <img src="./images/asakusatera.jpg" alt="デザイン演習Ⅲ・Ⅳ">
-                <span>デザイン演習Ⅲ・Ⅳ</span>
-            </a>
+  <div class="hero-scroll">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
 
-            <a href="./de56/index.html">
-                <img src="./images/sakura.jpg" alt="デザイン演習Ⅴ・Ⅵ">
-                <span>デザイン演習Ⅴ・Ⅵ</span>
-            </a>
-        </div>
-        
-    </main>
+<!-- マーキー -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">デザイン演習</span>
+    <span class="marquee-item">デジタルファブリケーション</span>
+    <span class="marquee-item">空間デザイン</span>
+    <span class="marquee-item">プロダクトデザイン</span>
+    <span class="marquee-item">Design Exercise</span>
+    <span class="marquee-item">Digital Fabrication</span>
+    <span class="marquee-item">Space Design</span>
+    <span class="marquee-item">Product Design</span>
+    <span class="marquee-item">デザイン演習</span>
+    <span class="marquee-item">デジタルファブリケーション</span>
+    <span class="marquee-item">空間デザイン</span>
+    <span class="marquee-item">プロダクトデザイン</span>
+    <span class="marquee-item">Design Exercise</span>
+    <span class="marquee-item">Digital Fabrication</span>
+    <span class="marquee-item">Space Design</span>
+    <span class="marquee-item">Product Design</span>
+  </div>
+</div>
+
+<!-- ポートフォリオ -->
+<section class="portfolio" id="portfolio">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-eyebrow">Selected Works</p>
+      <h2 class="section-title">Portfolio</h2>
+    </div>
+    <div class="section-meta">
+      <div class="section-count">04</div>
+      <div class="section-count-label">Projects</div>
+    </div>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <a href="./de12/index.html" class="portfolio-item reveal reveal-delay-1">
+      <!-- 画像あり: <img class="portfolio-img" src="./images/umi torii.jpg" alt="デザイン演習Ⅰ・Ⅱ"> -->
+      <div class="portfolio-placeholder ph-1">Ⅰ·Ⅱ</div>
+      <div class="portfolio-overlay"></div>
+      <div class="portfolio-info">
+        <p class="portfolio-num">01 / 04</p>
+        <h3 class="portfolio-name">デザイン演習<br>Ⅰ・Ⅱ</h3>
+        <p class="portfolio-tag">Design Exercise</p>
+      </div>
+      <div class="portfolio-arrow">→</div>
+    </a>
+
+    <a href="./digi_fab/index.html" class="portfolio-item reveal reveal-delay-2">
+      <!-- <img class="portfolio-img" src="./images/hune kanrannsya .jpg" alt="デジタルファブリケーション"> -->
+      <div class="portfolio-placeholder ph-2">fab</div>
+      <div class="portfolio-overlay"></div>
+      <div class="portfolio-info">
+        <p class="portfolio-num">02 / 04</p>
+        <h3 class="portfolio-name">デジタル<br>ファブリケーション</h3>
+        <p class="portfolio-tag">Digital Fabrication</p>
+      </div>
+      <div class="portfolio-arrow">→</div>
+    </a>
+
+    <a href="./de34/index.html" class="portfolio-item reveal reveal-delay-3">
+      <!-- <img class="portfolio-img" src="./images/asakusatera.jpg" alt="デザイン演習Ⅲ・Ⅳ"> -->
+      <div class="portfolio-placeholder ph-3">Ⅲ·Ⅳ</div>
+      <div class="portfolio-overlay"></div>
+      <div class="portfolio-info">
+        <p class="portfolio-num">03 / 04</p>
+        <h3 class="portfolio-name">デザイン演習<br>Ⅲ・Ⅳ</h3>
+        <p class="portfolio-tag">Design Exercise</p>
+      </div>
+      <div class="portfolio-arrow">→</div>
+    </a>
+
+    <a href="./de56/index.html" class="portfolio-item reveal reveal-delay-4">
+      <!-- <img class="portfolio-img" src="./images/sakura.jpg" alt="デザイン演習Ⅴ・Ⅵ"> -->
+      <div class="portfolio-placeholder ph-4">Ⅴ·Ⅵ</div>
+      <div class="portfolio-overlay"></div>
+      <div class="portfolio-info">
+        <p class="portfolio-num">04 / 04</p>
+        <h3 class="portfolio-name">デザイン演習<br>Ⅴ・Ⅵ</h3>
+        <p class="portfolio-tag">Design Exercise</p>
+      </div>
+      <div class="portfolio-arrow">→</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="about-left reveal">
+    <p class="about-label">About</p>
+    <h2 class="about-title">デザインで<br>世界を読む</h2>
+    <p class="about-text">
+      空間・プロダクト・デジタルの境界を横断しながら、<br>
+      ものの本質に向き合うデザインを探求しています。<br><br>
+      北欧のデザイン哲学に影響を受け、<br>
+      余白と素材、光と静けさを大切にした<br>
+      作品づくりを続けています。
+    </p>
+  </div>
+  <div class="about-stats reveal reveal-delay-2">
+    <div><div class="stat-num">04</div><div class="stat-label">Projects</div></div>
+    <div><div class="stat-num">3+</div><div class="stat-label">Years</div></div>
+    <div><div class="stat-num">∞</div><div class="stat-label">Ideas</div></div>
+    <div><div class="stat-num">01</div><div class="stat-label">Portfolio</div></div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <span class="footer-brand">XBP</span>
+  <ul class="footer-links">
+    <li><a href="#portfolio">Works</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 nori — All rights reserved</span>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('follower');
+  let mx = 0, my = 0, fx = 0, fy = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateFollower() {
+    fx += (mx - fx) * 0.1;
+    fy += (my - fy) * 0.1;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  document.querySelectorAll('.portfolio-item, .hero-cta, .nav-links a').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      follower.style.width = '60px';
+      follower.style.height = '60px';
+      follower.style.opacity = '0.25';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      follower.style.width = '36px';
+      follower.style.height = '36px';
+      follower.style.opacity = '0.4';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+</script>
 </body>
-
 </html>
-
