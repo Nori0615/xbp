@@ -3,42 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>デザイン演習Ⅲ・Ⅳ</title>
-<link rel="stylesheet" href="./css/style.css">
+<title>デザイン演習Ⅲ・Ⅳ — XBP</title>
+<link rel="shortcut icon" href="../images/xbp.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
 
-<header class="header">
-  <div class="container header-inner">
-    <a href="../index.html" class="logo">
-      <img src="./images/0_XBlogo.png" alt="home">
-    </a>
-    <span class="header-label">デザイン演習 Ⅲ・Ⅳ</span>
+<!-- カスタムカーソル -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
+
+<!-- ナビゲーション -->
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo">
+    <img src="../images/0_XBlogo.png" alt="XBP">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ページヘッダー -->
+<section class="page-hero">
+  <!-- 背景の縦ライン（トップページと同じ） -->
+  <div class="hero-bg-lines">
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
   </div>
-</header>
 
+  <p class="hero-year">2025</p>
+  <p class="hero-eyebrow">Design Exercise</p>
+
+  <h1 class="page-hero-title">
+    <span class="line"><span class="word">演習</span></span>
+    <span class="line"><span class="word italic-accent">Ⅲ · Ⅳ</span></span>
+  </h1>
+
+  <div class="page-hero-bottom">
+    <p class="hero-desc">デザイン演習ノート一覧</p>
+    <span class="page-count">04 Notes</span>
+  </div>
+</section>
+
+<!-- マーキー（トップページと同じ） -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">デザイン演習Ⅲ</span>
+    <span class="marquee-item">デザイン演習Ⅳ</span>
+    <span class="marquee-item">Design Exercise</span>
+    <span class="marquee-item">演習ノート</span>
+    <span class="marquee-item">Design Process</span>
+    <span class="marquee-item">Sketch &amp; Idea</span>
+    <span class="marquee-item">デザイン演習Ⅲ</span>
+    <span class="marquee-item">デザイン演習Ⅳ</span>
+    <span class="marquee-item">Design Exercise</span>
+    <span class="marquee-item">演習ノート</span>
+    <span class="marquee-item">Design Process</span>
+    <span class="marquee-item">Sketch &amp; Idea</span>
+  </div>
+</div>
+
+<!-- ノート一覧 -->
 <main class="container">
-  <section class="card">
+  <div class="notes-header reveal">
+    <div>
+      <p class="section-eyebrow">Selected Notes</p>
+      <h2 class="section-title">Notes</h2>
+    </div>
+    <div class="section-meta">
+      <div class="section-count">04</div>
+      <div class="section-count-label">Notes</div>
+    </div>
+  </div>
 
-    <div class="card-eyebrow">Design Exercise</div>
-    <h1>Ⅲ &amp; Ⅳ</h1>
-    <p class="sub">演習ノート一覧</p>
-
-    <nav>
-      <ul class="list">
-        <li><a href="./1.html"><span class="list-num">01</span><span class="list-arrow">→</span></a></li>
-        <li><a href="./2.html"><span class="list-num">02</span><span class="list-arrow">→</span></a></li>
-        <li><a href="./3.html"><span class="list-num">03</span><span class="list-arrow">→</span></a></li>
-        <li><a href="./4.html"><span class="list-num">04</span><span class="list-arrow">→</span></a></li>
-      </ul>
-    </nav>
-
-  </section>
+  <ul class="list reveal">
+    <li class="reveal reveal-delay-1">
+      <a href="./1.html">
+        <div class="list-left">
+          <span class="list-num">01</span>
+          <span class="list-label">Note 01</span>
+        </div>
+        <div class="list-right">
+          <span class="list-tag">Design Exercise Ⅲ</span>
+          <span class="list-arrow">→</span>
+        </div>
+      </a>
+    </li>
+    <li class="reveal reveal-delay-2">
+      <a href="./2.html">
+        <div class="list-left">
+          <span class="list-num">02</span>
+          <span class="list-label">Note 02</span>
+        </div>
+        <div class="list-right">
+          <span class="list-tag">Design Exercise Ⅲ</span>
+          <span class="list-arrow">→</span>
+        </div>
+      </a>
+    </li>
+    <li class="reveal reveal-delay-3">
+      <a href="./3.html">
+        <div class="list-left">
+          <span class="list-num">03</span>
+          <span class="list-label">Note 03</span>
+        </div>
+        <div class="list-right">
+          <span class="list-tag">Design Exercise Ⅳ</span>
+          <span class="list-arrow">→</span>
+        </div>
+      </a>
+    </li>
+    <li class="reveal reveal-delay-4">
+      <a href="./4.html">
+        <div class="list-left">
+          <span class="list-num">04</span>
+          <span class="list-label">Note 04</span>
+        </div>
+        <div class="list-right">
+          <span class="list-tag">Design Exercise Ⅳ</span>
+          <span class="list-arrow">→</span>
+        </div>
+      </a>
+    </li>
+  </ul>
 </main>
 
+<!-- フッター -->
+<footer>
+  <span class="footer-brand">XBP</span>
+  <ul class="footer-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 nori — All rights reserved</span>
+</footer>
+
+<script>
+  /* === カスタムカーソル（トップページと同じ） === */
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('follower');
+  let mx = 0, my = 0, fx = 0, fy = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateFollower() {
+    fx += (mx - fx) * 0.1;
+    fy += (my - fy) * 0.1;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  /* リンクホバーでカーソル拡大 */
+  document.querySelectorAll('.list a, .nav-links a, .nav-logo').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      follower.style.width = '60px';
+      follower.style.height = '60px';
+      follower.style.opacity = '0.25';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      follower.style.width = '36px';
+      follower.style.height = '36px';
+      follower.style.opacity = '0.4';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+
+  /* === ナビ スクロール効果 === */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* === スクロール reveal === */
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+</script>
 </body>
 </html>
