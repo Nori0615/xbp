@@ -3,74 +3,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第４回まとめ</title>
-
+<title>第４回まとめ — XBP</title>
+<link rel="shortcut icon" href="../images/xbp.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<header class="header">
-  <div class="container header-inner">
-    <a href="./index.html" class="logo">
-      <img src="./images/0_XBlogo.png" alt="home">
-    </a>
+<!-- カスタムカーソル -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
+
+<!-- ナビゲーション -->
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">
+    <img src="./images/0_XBlogo.png" alt="XBP">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ページヒーロー -->
+<section class="page-hero">
+  <div class="hero-bg-lines">
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
   </div>
-</header>
 
-<main class="container">
+  <p class="hero-year">2025</p>
+  <p class="hero-eyebrow">Design Exercise Ⅳ</p>
 
-  <section class="card">
-    <h1>KU-BizTech</h1>
-    
+  <h1 class="page-hero-title">
+    <span class="line"><span class="word">第４回</span></span>
+    <span class="line"><span class="word italic-accent">まとめ</span></span>
+  </h1>
+
+  <div class="page-hero-bottom">
+    <p class="hero-desc">KU-BizTech — お散歩ルートメーカー</p>
+    <span class="page-count">Note 04</span>
+  </div>
+</section>
+
+<!-- マーキー -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">KU-BizTech</span>
+    <span class="marquee-item">お散歩ルートメーカー</span>
+    <span class="marquee-item">Design Exercise</span>
+    <span class="marquee-item">Route Maker</span>
+    <span class="marquee-item">ChatGPT API</span>
+    <span class="marquee-item">Nominatim</span>
+    <span class="marquee-item">KU-BizTech</span>
+    <span class="marquee-item">お散歩ルートメーカー</span>
+    <span class="marquee-item">Design Exercise</span>
+    <span class="marquee-item">Route Maker</span>
+    <span class="marquee-item">ChatGPT API</span>
+    <span class="marquee-item">Nominatim</span>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<main class="note-container">
+
+  <!-- セクション1: KU-BizTech -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">01</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Project</p>
+        <h2 class="note-section-title">KU-BizTech</h2>
+      </div>
+    </div>
   </section>
-  <section class="card-2">
-    <h1>追加した条件</h1>
-    <ul>
+
+  <!-- セクション2: 追加した条件 -->
+  <section class="note-section reveal reveal-delay-1">
+    <div class="note-section-header">
+      <span class="note-index">02</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Requirements</p>
+        <h2 class="note-section-title">追加した条件</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <ul class="note-list">
         <li>散歩のルートを決めるアプリを作りたい</li>
-        <li>歩きたい距離もしくは歩きたい時間、現在地（住所か駅名や建物の名前など、もしくはGPS）、往復か片道、を入力することでお散歩ルートを決める。</li>
+        <li>歩きたい距離もしくは歩きたい時間、現在地（住所か駅名や建物の名前など、もしくはGPS）、往復か片道、を入力することでお散歩ルートを決める</li>
         <li>GoogleMapに連携できるといいな</li>
         <li>出来れば、観光地などきれいな景色があるところならそこを通るようにルートを作ってほしい</li>
-        <li>海や道のないところを通らず、歩道の上を通るようして（詳細に）</li>
+        <li>海や道のないところを通らず、歩道の上を通るようにして（詳細に）</li>
         <li>きれいなUIでお願い</li>
         <li>Nominatim の日本語住所の解析精度の問題に対応して</li>
         <li>Zipファイルにして</li>
-        <li>Chat GPTのAPI Keyを持っている。</li>
-        <li>Chat GPTを用いてルートの紹介文や住所検索精度上昇させて</li>
-        <li>Chat GPTが入力された距離、時間からルートを考えてもいい（正確な方で）</li>
-
-    </ul>
-
+        <li>Chat GPT の API Key を持っている</li>
+        <li>Chat GPT を用いてルートの紹介文や住所検索精度を上昇させて</li>
+        <li>Chat GPT が入力された距離・時間からルートを考えてもいい（正確な方で）</li>
+      </ul>
+    </div>
   </section>
 
-
-  <section class="card">
-    <h1>お散歩ルートメーカー</h1>
-    <div class="gallery">
-    <img src="./images/osanpo2.png" alt="">
-  </div>
-  <p>
-   <h2>使用動画</h2>
-    <a href="https://youtu.be/7WclAT97Y4g" target="_blank">
-      ▶ 動画を見る
-    </a>
-  </p>
-
-   
+  <!-- セクション3: 成果物 -->
+  <section class="note-section reveal reveal-delay-2">
+    <div class="note-section-header">
+      <span class="note-index">03</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Output</p>
+        <h2 class="note-section-title">お散歩ルートメーカー</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <div class="note-gallery">
+        <div class="note-gallery-img-wrap">
+          <img src="./images/osanpo2.png" alt="お散歩ルートメーカー スクリーンショット">
+        </div>
+      </div>
+      <div class="note-video-link">
+        <p class="note-video-label">使用動画</p>
+        <a href="https://youtu.be/7WclAT97Y4g" target="_blank" class="note-cta">
+          <span>▶ 動画を見る</span>
+          <span class="note-cta-arrow">→</span>
+        </a>
+      </div>
+    </div>
   </section>
 
-  <section class="card">
-    <h1>感想</h1>
-    <p>
-      今回使ったマップがNominatimでGoogleMapとではルートの作り方や精度に差があり、
-      NominatimとGoogleMapでは所要時間や実際の距離が変わってしまうため、
-      実用化を考えるとGoogleMapのAPIを用いて統一したかった。
-    </p>
+  <!-- セクション4: 感想 -->
+  <section class="note-section reveal reveal-delay-3">
+    <div class="note-section-header">
+      <span class="note-index">04</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Reflection</p>
+        <h2 class="note-section-title">感想</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">
+        今回使ったマップが Nominatim で Google Map とではルートの作り方や精度に差があり、
+        Nominatim と Google Map では所要時間や実際の距離が変わってしまうため、
+        実用化を考えると Google Map の API を用いて統一したかった。
+      </p>
+    </div>
   </section>
 
 </main>
 
+<!-- フッター -->
+<footer>
+  <span class="footer-brand">XBP</span>
+  <ul class="footer-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 nori — All rights reserved</span>
+</footer>
+
+<script>
+  /* === カスタムカーソル === */
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('follower');
+  let mx = 0, my = 0, fx = 0, fy = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateFollower() {
+    fx += (mx - fx) * 0.1;
+    fy += (my - fy) * 0.1;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  document.querySelectorAll('.note-cta, .nav-links a, .nav-logo').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      follower.style.width = '60px';
+      follower.style.height = '60px';
+      follower.style.opacity = '0.25';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      follower.style.width = '36px';
+      follower.style.height = '36px';
+      follower.style.opacity = '0.4';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+
+  /* === ナビ スクロール効果 === */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* === スクロール reveal === */
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+
+  /* === リスト項目 stagger reveal === */
+  const listItems = document.querySelectorAll('.note-list li');
+  const listIo = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        listIo.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  listItems.forEach(li => listIo.observe(li));
+
+  /* === ギャラリー画像 パララックス風 === */
+  const galleryImg = document.querySelector('.note-gallery-img-wrap');
+  if (galleryImg) {
+    window.addEventListener('scroll', () => {
+      const rect = galleryImg.getBoundingClientRect();
+      const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+      galleryImg.querySelector('img').style.transform =
+        `scale(1.06) translateY(${center * 0.04}px)`;
+    });
+  }
+</script>
 </body>
 </html>
