@@ -12,11 +12,9 @@
 </head>
 <body>
 
-<!-- カスタムカーソル -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="follower"></div>
 
-<!-- ナビゲーション -->
 <nav id="navbar">
   <a href="../index.html" class="nav-logo">
     <img src="../images/0_XBlogo.png" alt="XBP">
@@ -28,39 +26,33 @@
   </ul>
 </nav>
 
-<!-- ページヘッダー -->
 <section class="page-hero">
-  <!-- 背景の縦ライン（トップページと同じ） -->
   <div class="hero-bg-lines">
     <div class="hero-bg-line"></div>
     <div class="hero-bg-line"></div>
   </div>
-
   <p class="hero-year">2025</p>
   <p class="hero-eyebrow">Design Exercise</p>
-
   <h1 class="page-hero-title">
     <span class="line"><span class="word">演習</span></span>
-    <span class="line"><span class="word italic-accent">Ⅲ · Ⅳ</span></span>
+    <span class="line"><span class="word italic-accent">III · IV</span></span>
   </h1>
-
   <div class="page-hero-bottom">
     <p class="hero-desc">デザイン演習ノート一覧</p>
     <span class="page-count">04 Notes</span>
   </div>
 </section>
 
-<!-- マーキー（トップページと同じ） -->
 <div class="marquee-section">
   <div class="marquee-track">
-    <span class="marquee-item">デザイン演習Ⅲ</span>
-    <span class="marquee-item">デザイン演習Ⅳ</span>
+    <span class="marquee-item">デザイン演習III</span>
+    <span class="marquee-item">デザイン演習IV</span>
     <span class="marquee-item">Design Exercise</span>
     <span class="marquee-item">演習ノート</span>
     <span class="marquee-item">Design Process</span>
     <span class="marquee-item">Sketch &amp; Idea</span>
-    <span class="marquee-item">デザイン演習Ⅲ</span>
-    <span class="marquee-item">デザイン演習Ⅳ</span>
+    <span class="marquee-item">デザイン演習III</span>
+    <span class="marquee-item">デザイン演習IV</span>
     <span class="marquee-item">Design Exercise</span>
     <span class="marquee-item">演習ノート</span>
     <span class="marquee-item">Design Process</span>
@@ -68,7 +60,6 @@
   </div>
 </div>
 
-<!-- ノート一覧 -->
 <main class="container">
   <div class="notes-header reveal">
     <div>
@@ -81,7 +72,7 @@
     </div>
   </div>
 
-  <ul class="list reveal">
+  <ul class="list">
     <li class="reveal reveal-delay-1">
       <a href="./1.html">
         <div class="list-left">
@@ -89,7 +80,7 @@
           <span class="list-label">Note 01</span>
         </div>
         <div class="list-right">
-          <span class="list-tag">Design Exercise Ⅲ</span>
+          <span class="list-tag">Design Exercise III</span>
           <span class="list-arrow">→</span>
         </div>
       </a>
@@ -101,7 +92,7 @@
           <span class="list-label">Note 02</span>
         </div>
         <div class="list-right">
-          <span class="list-tag">Design Exercise Ⅲ</span>
+          <span class="list-tag">Design Exercise III</span>
           <span class="list-arrow">→</span>
         </div>
       </a>
@@ -113,7 +104,7 @@
           <span class="list-label">Note 03</span>
         </div>
         <div class="list-right">
-          <span class="list-tag">Design Exercise Ⅳ</span>
+          <span class="list-tag">Design Exercise IV</span>
           <span class="list-arrow">→</span>
         </div>
       </a>
@@ -125,7 +116,7 @@
           <span class="list-label">Note 04</span>
         </div>
         <div class="list-right">
-          <span class="list-tag">Design Exercise Ⅳ</span>
+          <span class="list-tag">Design Exercise IV</span>
           <span class="list-arrow">→</span>
         </div>
       </a>
@@ -133,7 +124,6 @@
   </ul>
 </main>
 
-<!-- フッター -->
 <footer>
   <span class="footer-brand">XBP</span>
   <ul class="footer-links">
@@ -145,7 +135,6 @@
 </footer>
 
 <script>
-  /* === カスタムカーソル（トップページと同じ） === */
   const cursor = document.getElementById('cursor');
   const follower = document.getElementById('follower');
   let mx = 0, my = 0, fx = 0, fy = 0;
@@ -165,7 +154,6 @@
   }
   animateFollower();
 
-  /* リンクホバーでカーソル拡大 */
   document.querySelectorAll('.list a, .nav-links a, .nav-logo').forEach(el => {
     el.addEventListener('mouseenter', () => {
       follower.style.width = '60px';
@@ -181,13 +169,11 @@
     });
   });
 
-  /* === ナビ スクロール効果 === */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  /* === スクロール reveal === */
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
