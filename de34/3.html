@@ -3,230 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第三回まとめ</title>
-
+<title>第３回まとめ — XBP</title>
+<link rel="shortcut icon" href="../images/xbp.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
+<body>
 
-<body class="page">
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
 
-<header class="header">
-  <div class="container header-inner">
-    <a href="./index.html" class="logo">
-      <img src="./images/0_XBlogo.png" alt="home">
-    </a>
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">
+    <img src="./images/0_XBlogo.png" alt="XBP">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg-lines">
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
   </div>
-</header>
+  <p class="hero-year">2025</p>
+  <p class="hero-eyebrow">Design Exercise III</p>
+  <h1 class="page-hero-title">
+    <span class="line"><span class="word">第３回</span></span>
+    <span class="line"><span class="word italic-accent">まとめ</span></span>
+  </h1>
+  <div class="page-hero-bottom">
+    <p class="hero-desc">Flask — PythonによるWebアプリ開発</p>
+    <span class="page-count">Note 03</span>
+  </div>
+</section>
 
-<main class="container">
-  <section class="card">
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Flask</span>
+    <span class="marquee-item">Python</span>
+    <span class="marquee-item">Web Framework</span>
+    <span class="marquee-item">Backend</span>
+    <span class="marquee-item">Frontend</span>
+    <span class="marquee-item">Jinja2 Template</span>
+    <span class="marquee-item">Flask</span>
+    <span class="marquee-item">Python</span>
+    <span class="marquee-item">Web Framework</span>
+    <span class="marquee-item">Backend</span>
+    <span class="marquee-item">Frontend</span>
+    <span class="marquee-item">Jinja2 Template</span>
+  </div>
+</div>
 
-    
-    <h1>Flaskについて</h1>
+<main class="note-container">
 
-    
-    <p>
-      PythonでWebサイトやWebアプリを構築するための「マイクロフレームワーク」です。
-    </p>
+  <!-- 01 Flaskについて -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">01</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Overview</p>
+        <h2 class="note-section-title">Flaskについて</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">
+        PythonでWebサイトやWebアプリを構築するための「マイクロフレームワーク」です。
+      </p>
+      <p class="note-text">
+        使用機材<br>
+        · ステッピングモーター<br>
+        · モータードライバ
+      </p>
+    </div>
+  </section>
 
-    <p>
-      使用機材<br>
-      ・ステッピングモーター<br>
-      ・モータードライバ
-    </p>
-    </section>
-    <section class="card">
-      <h1>基本構成</h1>
-        <div class="code">
-<pre><code>
-from flask import Flask, render_template, request, redirect, url_for
+  <!-- 02 基本構成 -->
+  <section class="note-section reveal reveal-delay-1">
+    <div class="note-section-header">
+      <span class="note-index">02</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Structure</p>
+        <h2 class="note-section-title">基本構成</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-code-label">app.py</p>
+      <div class="code">
+<pre><code>from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-
-# 編集ゾーンーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-##ここでルートのURLが指定された時に実行される
 @app.route('/')
 def index():
-    ##index.htmlがレンダリングされる
-    a="Nori"
-    return render_template("index.html",txt=a)
+    a = "Nori"
+    return render_template("index.html", txt=a)
 
-# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 if __name__ == '__main__':
-    app.run()
-
-</code></pre>
+    app.run()</code></pre>
+      </div>
     </div>
-    </section>
-    <section class="card">
+  </section>
 
-      <!-- 作品 -->
-      <h1>プログラム例 for</h1>
-      <p></p>
-<div class="code">
-<pre><code>
-    {% for data in list %} 
+  <!-- 03 for -->
+  <section class="note-section reveal reveal-delay-2">
+    <div class="note-section-header">
+      <span class="note-index">03</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Template</p>
+        <h2 class="note-section-title">プログラム例 — for</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-code-label">app.py</p>
+      <div class="code">
+<pre><code>{% for data in list %}
 
 
-{% endfor %}
+{% endfor %}</code></pre>
+      </div>
 
-</code></pre>
-</div>
-      <p>html</p>
-<div class="code">
-<pre><code>
-&lt;h1&gt;テスト&lt;/h1&gt;
+      <p class="note-code-label">html</p>
+      <div class="code">
+<pre><code>&lt;h1&gt;テスト&lt;/h1&gt;
 &lt;div&gt;
     &#123;% for i in range(10) %&#125;
         &#123;&#123;txt&#125;&#125; --- &#123;&#123;i&#125;&#125;&lt;br&gt;
     &#123;% endfor %&#125;
-&lt;/div&gt;
-</code></pre>
-</div>
-<div class="gallery">
-    <img src="./images//flask1.png" alt="">
-  </div>
-</section>
+&lt;/div&gt;</code></pre>
+      </div>
 
+      <div class="note-gallery">
+        <div class="note-gallery-img-wrap">
+          <img src="./images/flask1.png" alt="for文の実行結果">
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="card">
-  <h1>プログラム例 if</h1>
-  <p>app.py</p>
-  <div class="code">
-<pre><code>
-    {% if ○○ %}
+  <!-- 04 if -->
+  <section class="note-section reveal reveal-delay-3">
+    <div class="note-section-header">
+      <span class="note-index">04</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Template</p>
+        <h2 class="note-section-title">プログラム例 — if</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-code-label">app.py</p>
+      <div class="code">
+<pre><code>{% if ○○ %}
 :
 {% elif ×× %}
 :
 {% else %}
 :
-{% endif %}
+{% endif %}</code></pre>
+      </div>
 
-</code></pre>
-    </div>
-  <p>html</p>
-  <div class="code">
-<pre><code>
-    &lt;h1&gt;テスト&lt;/h1&gt;
+      <p class="note-code-label">html</p>
+      <div class="code">
+<pre><code>&lt;h1&gt;テスト&lt;/h1&gt;
 &lt;div&gt;
     &#123;% for i in range(10) %&#125;
-        &lt;!-- %2は2で割った余り --&gt;
         &#123;% if i%2==0 %&#125;
             &#123;&#123;txt&#125;&#125; --偶数-- &#123;&#123;i&#125;&#125;&lt;br&gt;
         &#123;% else %&#125;
             &#123;&#123;txt&#125;&#125; --奇数-- &#123;&#123;i&#125;&#125;&lt;br&gt;
         &#123;% endif %&#125;
     &#123;% endfor %&#125;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="note-gallery">
+        <div class="note-gallery-img-wrap">
+          <img src="./images/flask2.png" alt="if文の実行結果">
+        </div>
+      </div>
     </div>
-    <div class="gallery">
-    <img src="./images/flask2.png" alt="">
-  </div>
   </section>
 
-  <section class="card">
-    <h1>csvを表示</h1>
-    <p>app.py</p>
-    <div class="code">
-<pre><code>
-    from flask import Flask, render_template, request, session, redirect, flash, url_for
+  <!-- 05 csvを表示 -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">05</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Data</p>
+        <h2 class="note-section-title">CSVを表示</h2>
+      </div>
+    </div>
+    <div class="note-body">
+
+      <p class="note-code-label">app.py — CSV読み込み</p>
+      <div class="code">
+<pre><code>from flask import Flask, render_template
 from csv import reader
 import os
 
 app = Flask(__name__)
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# 編集ゾーンーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-##ここでルートのURLが指定された時に実行される
 @app.route('/')
 def index():
-    #index.htmlがレンダリングされる
     csv_path = os.path.join(BASE_DIR, 'mmcsv.csv')
     with open(csv_path, 'r', encoding="utf-8") as csv_file:
         csv_reader = reader(csv_file)
         list_mm = list(csv_reader)
     return render_template("index.html", mmlist=list_mm)
 
-# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 if __name__ == '__main__':
-    app.run()
-</code></pre>
-    </div>
-    <p>html</p>
-  <div class="code">
-<pre><code>
-  &lt;h1&gt;テスト&lt;/h1&gt;
+    app.run()</code></pre>
+      </div>
+
+      <p class="note-code-label">html — リスト表示</p>
+      <div class="code">
+<pre><code>&lt;h1&gt;テスト&lt;/h1&gt;
 &lt;div&gt;
     &#123;&#123; mmlist &#125;&#125;
-&lt;/div&gt;
-</code></pre>
-    </div>
- <div class="gallery">
-    <img src="./images/flask3.png" alt="">
-  </div>
+&lt;/div&gt;</code></pre>
+      </div>
 
+      <div class="note-gallery">
+        <div class="note-gallery-img-wrap">
+          <img src="./images/flask3.png" alt="CSV表示結果1">
+        </div>
+      </div>
 
-    <p>html</p>
-  <div class="code">
-<pre><code>
-  &lt;h1&gt;テスト&lt;/h1&gt;
+      <p class="note-code-label">html — 列指定表示</p>
+      <div class="code">
+<pre><code>&lt;h1&gt;テスト&lt;/h1&gt;
 &lt;div&gt;
     &#123;% for data in mmlist %&#125;
         &#123;&#123; data[1] &#125;&#125;,&#123;&#123; data[3] &#125;&#125;&lt;br&gt;
     &#123;% endfor %&#125;
-&lt;/div&gt;
-</code></pre>
-    </div>
-    <div class="gallery">
-    <img src="./images/flask4.png" alt="">
-  </div>
+&lt;/div&gt;</code></pre>
+      </div>
 
+      <div class="note-gallery">
+        <div class="note-gallery-img-wrap">
+          <img src="./images/flask4.png" alt="CSV表示結果2">
+        </div>
+      </div>
 
- <p>app.py</p>
-  <div class="code">
-<pre><code>
-from flask import Flask, render_template, request, session, redirect, flash, url_for
-from csv import reader
-import os
-
-app = Flask(__name__)
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# 編集ゾーンーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-##ここでルートのURLが指定された時に実行される
-@app.route('/')
+      <p class="note-code-label">app.py — GoogleMapsリンク生成</p>
+      <div class="code">
+<pre><code>@app.route('/')
 def index():
-    #index.htmlがレンダリングされる
     with open(os.path.join(BASE_DIR, 'mmcsv.csv'), 'r', encoding="utf-8") as csv_file:
         csv_reader = reader(csv_file)
         list_mm = list(csv_reader)
 
     for data in list_mm:
-        data[3] = "https://www.google.com/maps?q=" + data[3].replace("(","").replace(")","").replace(" ","")
+        data[3] = "https://www.google.com/maps?q=" + \
+                  data[3].replace("(","").replace(")","").replace(" ","")
 
-    print(list_mm)
-    return render_template("index.html",mmlist=list_mm)
+    return render_template("index.html", mmlist=list_mm)
 
-
-# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 if __name__ == '__main__':
-    app.run()
-</code></pre>
-    </div>
-<div class="gallery">
-    <img src="./images/flask5.png" alt="">
-  </div>
+    app.run()</code></pre>
+      </div>
 
-     <p>html</p>
-  <div class="code">
-<pre><code>
-  &lt;h1&gt;テスト&lt;/h1&gt;
+      <div class="note-gallery">
+        <div class="note-gallery-img-wrap">
+          <img src="./images/flask5.png" alt="CSV表示結果3">
+        </div>
+      </div>
+
+      <p class="note-code-label">html — 条件付きリンク</p>
+      <div class="code">
+<pre><code>&lt;h1&gt;テスト&lt;/h1&gt;
 &lt;div&gt;
     &#123;% for data in mmlist %&#125;
         &#123;% if data[1]=="場所" %&#125;
@@ -235,34 +286,118 @@ if __name__ == '__main__':
             &lt;a href=&#123;&#123; data[3] &#125;&#125; target="_blank"&gt;&#123;&#123; data[1] &#125;&#125;&lt;/a&gt;&lt;br&gt;
         &#123;% endif %&#125;
     &#123;% endfor %&#125;
-&lt;/div&gt;
-</code></pre>
-    </div>
+&lt;/div&gt;</code></pre>
+      </div>
 
-  <div class="gallery">
-    <img src="./images/flask6.png" alt="">
-  </div>
+      <div class="note-gallery">
+        <div class="note-gallery-img-wrap">
+          <img src="./images/flask6.png" alt="CSV表示結果4">
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <section class="card">
-    <h1>バックエンドとフロントエンド</h1>
-    <p>
-      <h4>フロントエンド</h4>
-      ユーザーが直接見て操作する部分です。<br>
-      HTML・CSS で見た目を作り、JavaScript（ReactやVueなどのフレームワーク）で動きをつけます。<br>
+  <!-- 06 バックエンドとフロントエンド -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">06</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Concept</p>
+        <h2 class="note-section-title">バックエンドと<br>フロントエンド</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <div class="note-two-col">
+        <div class="note-col-item">
+          <p class="note-col-label">Frontend</p>
+          <p class="note-text">
+            ユーザーが直接見て操作する部分です。HTML・CSS で見た目を作り、JavaScript（ReactやVueなどのフレームワーク）で動きをつけます。
+          </p>
+        </div>
+        <div class="note-col-item">
+          <p class="note-col-label">Backend</p>
+          <p class="note-text">
+            ユーザーからは見えない部分で、サーバー側で動いています。ログインの認証、商品の在庫チェック、決済処理など「ロジック」を担い、データベースとやり取りしてデータを保存・取得します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-
-      <h4>バックエンド</h4>
-      ユーザーからは見えない部分で、サーバー側で動いています。<br>
-      ログインの認証、商品の在庫チェック、決済処理など「ロジック」を担い、データベースとやり取りしてデータを保存・取得します。<br>
-    </p>
-
-    
-    </section>
-
- 
 </main>
 
+<footer>
+  <span class="footer-brand">XBP</span>
+  <ul class="footer-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 nori — All rights reserved</span>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('follower');
+  let mx = 0, my = 0, fx = 0, fy = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateFollower() {
+    fx += (mx - fx) * 0.1;
+    fy += (my - fy) * 0.1;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  document.querySelectorAll('.nav-links a, .nav-logo').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      follower.style.width = '60px';
+      follower.style.height = '60px';
+      follower.style.opacity = '0.25';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      follower.style.width = '36px';
+      follower.style.height = '36px';
+      follower.style.opacity = '0.4';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+
+  /* ギャラリー パララックス */
+  const galleries = document.querySelectorAll('.note-gallery-img-wrap');
+  window.addEventListener('scroll', () => {
+    galleries.forEach(wrap => {
+      const rect = wrap.getBoundingClientRect();
+      const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+      const img = wrap.querySelector('img');
+      if (img) img.style.transform = `scale(1.06) translateY(${center * 0.04}px)`;
+    });
+  });
+</script>
 </body>
 </html>

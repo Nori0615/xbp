@@ -3,48 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第一回まとめ</title>
-
+<title>第１回まとめ — XBP</title>
+<link rel="shortcut icon" href="../images/xbp.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<header class="header">
-  <div class="container header-inner">
-    <a href="./index.html" class="logo">
-      <img src="./images/0_XBlogo.png" alt="home">
-    </a>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
+
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">
+    <img src="./images/0_XBlogo.png" alt="XBP">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg-lines">
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
   </div>
-</header>
+  <p class="hero-year">2025</p>
+  <p class="hero-eyebrow">Design Exercise III</p>
+  <h1 class="page-hero-title">
+    <span class="line"><span class="word">第１回</span></span>
+    <span class="line"><span class="word italic-accent">まとめ</span></span>
+  </h1>
+  <div class="page-hero-bottom">
+    <p class="hero-desc">Arduino — 電子工作入門</p>
+    <span class="page-count">Note 01</span>
+  </div>
+</section>
 
-<main class="container">
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Arduino</span>
+    <span class="marquee-item">Lチカ</span>
+    <span class="marquee-item">明るさセンサー</span>
+    <span class="marquee-item">NeoPixel</span>
+    <span class="marquee-item">CdSセル</span>
+    <span class="marquee-item">LED Control</span>
+    <span class="marquee-item">Arduino</span>
+    <span class="marquee-item">Lチカ</span>
+    <span class="marquee-item">明るさセンサー</span>
+    <span class="marquee-item">NeoPixel</span>
+    <span class="marquee-item">CdSセル</span>
+    <span class="marquee-item">LED Control</span>
+  </div>
+</div>
 
-  <section class="card">
-    <h1>Arduinoとは？</h1>
-    <p>
-      電子工作でよく使われるマイコンボードです。<br>
-      LEDを光らせたり、モーターを作動させたり、さまざまなものを作成できます。<br><br>
+<main class="note-container">
 
-      使用機材<br>
-      ・LED<br>
-      ・10KΩ抵抗<br>
-      ・ジャンパー線<br>
-      ・ブレッドボード<br>
-      ・CdSセル
-    </p>
+  <!-- 01 Arduinoとは -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">01</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Overview</p>
+        <h2 class="note-section-title">Arduinoとは？</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">
+        電子工作でよく使われるマイコンボードです。<br>
+        LEDを光らせたり、モーターを作動させたり、さまざまなものを作成できます。
+      </p>
+      <p class="note-text">
+        使用機材<br>
+        · LED<br>
+        · 10KΩ抵抗<br>
+        · ジャンパー線<br>
+        · ブレッドボード<br>
+        · CdSセル
+      </p>
+    </div>
   </section>
 
-  <section class="card">
-    <h1>Lチカ</h1>
-    <p>LEDをチカチカさせること</p>
-
-    <h2>プログラム</h2>
-    <div class="code">
-<pre><code>
-void setup() {
+  <!-- 02 Lチカ -->
+  <section class="note-section reveal reveal-delay-1">
+    <div class="note-section-header">
+      <span class="note-index">02</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Exercise</p>
+        <h2 class="note-section-title">Lチカ</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">LEDをチカチカさせること。</p>
+      <p class="note-code-label">Arduino — プログラム</p>
+      <div class="code">
+<pre><code>void setup() {
   pinMode(13, OUTPUT);
 }
 
@@ -53,21 +109,25 @@ void loop() {
   delay(500);
   digitalWrite(13, LOW);
   delay(500);
-}
-</code></pre>
+}</code></pre>
+      </div>
     </div>
   </section>
 
-  <section class="card">
-    <h1>明るさセンサー</h1>
-    <p>
-      CdSセルで明るさを検知し、暗いときはLEDが光る仕組み
-    </p>
-
-    <h2>プログラム</h2>
-    <div class="code">
-<pre><code>
-const int sensorPin = A1;
+  <!-- 03 明るさセンサー -->
+  <section class="note-section reveal reveal-delay-2">
+    <div class="note-section-header">
+      <span class="note-index">03</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Exercise</p>
+        <h2 class="note-section-title">明るさセンサー</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">CdSセルで明るさを検知し、暗いときはLEDが光る仕組み。</p>
+      <p class="note-code-label">Arduino — プログラム</p>
+      <div class="code">
+<pre><code>const int sensorPin = A1;
 const int ledPin = 9;
 int threshold = 280;
 
@@ -85,19 +145,25 @@ void loop() {
   }
 
   delay(500);
-}
-</code></pre>
+}</code></pre>
+      </div>
     </div>
   </section>
 
-  <section class="card">
-    <h1>NeoPixel</h1>
-    <p>フルカラーLEDで自由に色を変えられる</p>
-
-    <h2>プログラム</h2>
-    <div class="code">
-<pre><code>
-#include &lt;Adafruit_NeoPixel.h&gt;
+  <!-- 04 NeoPixel -->
+  <section class="note-section reveal reveal-delay-3">
+    <div class="note-section-header">
+      <span class="note-index">04</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Exercise</p>
+        <h2 class="note-section-title">NeoPixel</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">フルカラーLEDで自由に色を変えられる。</p>
+      <p class="note-code-label">Arduino — プログラム</p>
+      <div class="code">
+<pre><code>#include &lt;Adafruit_NeoPixel.h&gt;
 #define PIN 9
 #define NUMPIXELS 5
 
@@ -123,19 +189,89 @@ void loop() {
     pixels.show();
     delay(500);
   }
-}
-</code></pre>
+}</code></pre>
+      </div>
     </div>
   </section>
 
-  <section class="card">
-    <h1>感想</h1>
-    <p>
-      難しそうだったが、作れる作品の幅が広がりそうで可能性を感じた。
-    </p>
+  <!-- 05 感想 -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">05</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Reflection</p>
+        <h2 class="note-section-title">感想</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">
+        難しそうだったが、作れる作品の幅が広がりそうで可能性を感じた。
+      </p>
+    </div>
   </section>
 
 </main>
 
+<footer>
+  <span class="footer-brand">XBP</span>
+  <ul class="footer-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 nori — All rights reserved</span>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('follower');
+  let mx = 0, my = 0, fx = 0, fy = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateFollower() {
+    fx += (mx - fx) * 0.1;
+    fy += (my - fy) * 0.1;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  document.querySelectorAll('.nav-links a, .nav-logo').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      follower.style.width = '60px';
+      follower.style.height = '60px';
+      follower.style.opacity = '0.25';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      follower.style.width = '36px';
+      follower.style.height = '36px';
+      follower.style.opacity = '0.4';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+</script>
 </body>
 </html>

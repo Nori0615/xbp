@@ -722,3 +722,85 @@ footer {
   footer { padding: 3rem 2rem; flex-direction: column; gap: 2rem; text-align: center; }
   .footer-links { justify-content: center; }
 }
+
+/* ========================================
+   詳細ページ追加スタイル（note3など）
+   ======================================== */
+
+/* コードブロックラベル */
+.note-code-label {
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.note-code-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px; height: 1px;
+  background: var(--accent);
+}
+
+/* コードブロック */
+.code {
+  background: var(--charcoal);
+  color: #E8E2D5;
+  padding: 1.4rem 1.8rem;
+  border-radius: 2px;
+  overflow-x: auto;
+  font-size: .82rem;
+  line-height: 1.8;
+  border-left: 2px solid var(--accent);
+}
+pre { margin: 0; }
+code { font-family: 'Courier New', Courier, monospace; }
+
+/* 2カラム（フロント・バック） */
+.note-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.note-col-label {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  letter-spacing: -.02em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid var(--sand);
+}
+
+@media screen and (max-width: 768px) {
+  .note-two-col { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* 複数画像グリッド（note2 制作風景など） */
+.note-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.note-gallery-grid .note-gallery-img-wrap img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.06);
+  transition: transform .6s cubic-bezier(.16,1,.3,1);
+  filter: saturate(.8);
+}
+
+.note-gallery-grid .note-gallery-img-wrap:hover img {
+  filter: saturate(1);
+}
+
+@media screen and (max-width: 768px) {
+  .note-gallery-grid { grid-template-columns: 1fr; }
+}
