@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第５回まとめ — XBP</title>
+<link rel="shortcut icon" href="../images/xbp.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
+
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">
+    <img src="./images/0_XBlogo.png" alt="XBP">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg-lines">
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
+  </div>
+  <p class="hero-year">2025</p>
+  <p class="hero-eyebrow">Design Exercise V</p>
+  <h1 class="page-hero-title">
+    <span class="line"><span class="word">第５回</span></span>
+    <span class="line"><span class="word italic-accent">まとめ</span></span>
+  </h1>
+  <div class="page-hero-bottom">
+    <p class="hero-desc">Database — 基本概念と企業での活用</p>
+    <span class="page-count">5 Sections</span>
+  </div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">データベース</span>
+    <span class="marquee-item">Table</span>
+    <span class="marquee-item">Field</span>
+    <span class="marquee-item">Record</span>
+    <span class="marquee-item">Query</span>
+    <span class="marquee-item">Relation</span>
+    <span class="marquee-item">データベース</span>
+    <span class="marquee-item">Table</span>
+    <span class="marquee-item">Field</span>
+    <span class="marquee-item">Record</span>
+    <span class="marquee-item">Query</span>
+    <span class="marquee-item">Relation</span>
+  </div>
+</div>
+
+<main class="note-container">
+
+  <!-- 01 データベースとは -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">01</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Overview</p>
+        <h2 class="note-section-title">データベースとは</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">
+        データを整理して保存し、必要なときに効率よく取り出せる仕組みのこと。
+      </p>
+    </div>
+  </section>
+
+  <!-- 02 Excelとの違い -->
+  <section class="note-section reveal reveal-delay-1">
+    <div class="note-section-header">
+      <span class="note-index">02</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Comparison</p>
+        <h2 class="note-section-title">Excelとの違い</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <div class="note-compare-grid">
+
+        <div class="note-compare-item reveal reveal-delay-2">
+          <p class="note-compare-label">Excel</p>
+          <ul class="note-compare-list">
+            <li>表計算ソフト（例：Microsoft Excel）</li>
+            <li>データの入力・計算・グラフ作成が得意</li>
+            <li>1つのシートにまとめて管理することが多い</li>
+            <li>データ量が増えると管理が大変になりやすい</li>
+          </ul>
+        </div>
+
+        <div class="note-compare-item note-compare-item--accent reveal reveal-delay-3">
+          <p class="note-compare-label">データベース</p>
+          <ul class="note-compare-list">
+            <li>大量データの管理に特化</li>
+            <li>複数の表（テーブル）に分けて整理できる</li>
+            <li>データ同士の関係（リレーション）を持てる</li>
+            <li>検索や抽出が効率的</li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="note-compare-summary reveal reveal-delay-4">
+        簡単に言うと — Excel＝「計算や見やすさ重視」　データベース＝「整理・検索・管理重視」
+      </p>
+    </div>
+  </section>
+
+  <!-- 03 基本用語 -->
+  <section class="note-section reveal reveal-delay-1">
+    <div class="note-section-header">
+      <span class="note-index">03</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Terminology</p>
+        <h2 class="note-section-title">基本用語</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <ul class="note-term-list">
+
+        <li class="reveal reveal-delay-1">
+          <div class="note-term-header">
+            <span class="note-term-en">Table</span>
+            <span class="note-term-ja">テーブル</span>
+          </div>
+          <p class="note-term-desc">データを保存する表のこと。Excelの「シート」に近いイメージ。</p>
+          <p class="note-term-example">例：「顧客テーブル」「商品テーブル」など</p>
+        </li>
+
+        <li class="reveal reveal-delay-2">
+          <div class="note-term-header">
+            <span class="note-term-en">Field</span>
+            <span class="note-term-ja">フィールド</span>
+          </div>
+          <p class="note-term-desc">テーブルの列（項目）のこと。Excelでいう「列」。</p>
+          <p class="note-term-example">例（顧客テーブル）：名前 / 電話番号 / 住所</p>
+        </li>
+
+        <li class="reveal reveal-delay-3">
+          <div class="note-term-header">
+            <span class="note-term-en">Record</span>
+            <span class="note-term-ja">レコード</span>
+          </div>
+          <p class="note-term-desc">1行分のデータ。Excelでいう「行」。</p>
+        </li>
+
+        <li class="reveal reveal-delay-4">
+          <div class="note-term-header">
+            <span class="note-term-en">Relation</span>
+            <span class="note-term-ja">リレーション</span>
+          </div>
+          <p class="note-term-desc">テーブル同士のつながり。</p>
+          <p class="note-term-example">例：「顧客テーブル」と「注文テーブル」を「顧客ID」で関連付けることで「誰が何を買ったか」が分かる</p>
+        </li>
+
+        <li class="reveal reveal-delay-1">
+          <div class="note-term-header">
+            <span class="note-term-en">Query</span>
+            <span class="note-term-ja">クエリ</span>
+          </div>
+          <p class="note-term-desc">データの検索・抽出を行う仕組み。Excelのフィルターよりも柔軟で強力。</p>
+          <p class="note-term-example">例：「東京都の顧客だけ表示」「売上が1万円以上のデータだけ抽出」</p>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- 04 企業でのメリット -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">04</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Business Value</p>
+        <h2 class="note-section-title">企業でのメリット</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <div class="note-flow-grid">
+
+        <div class="note-flow-item reveal reveal-delay-1">
+          <p class="note-flow-label">売上向上</p>
+          <div class="note-flow-steps">
+            <span>購買履歴データ</span>
+            <span class="note-flow-arrow">↓</span>
+            <span>クエリで分析</span>
+            <span class="note-flow-arrow">↓</span>
+            <span>おすすめ商品・広告配信</span>
+            <span class="note-flow-arrow">↓</span>
+            <span class="note-flow-result">売上アップ・リピート増加</span>
+          </div>
+        </div>
+
+        <div class="note-flow-item reveal reveal-delay-2">
+          <p class="note-flow-label">サービス品質の向上</p>
+          <div class="note-flow-steps">
+            <span>顧客情報・問い合わせ履歴</span>
+            <span class="note-flow-arrow">↓</span>
+            <span>クエリで即時検索</span>
+            <span class="note-flow-arrow">↓</span>
+            <span>状況に合った対応</span>
+            <span class="note-flow-arrow">↓</span>
+            <span class="note-flow-result">顧客満足度向上</span>
+          </div>
+        </div>
+
+        <div class="note-flow-item reveal reveal-delay-3">
+          <p class="note-flow-label">意思決定の迅速化</p>
+          <div class="note-flow-steps">
+            <span>売上データ・在庫データ</span>
+            <span class="note-flow-arrow">↓</span>
+            <span>クエリで集計・分析</span>
+            <span class="note-flow-arrow">↓</span>
+            <span>現状の可視化</span>
+            <span class="note-flow-arrow">↓</span>
+            <span class="note-flow-result">迅速で正確な意思決定</span>
+          </div>
+        </div>
+
+        <div class="note-flow-item reveal reveal-delay-4">
+          <p class="note-flow-label">ミス削減・信頼性向上</p>
+          <div class="note-flow-steps">
+            <span>バラバラなデータ管理</span>
+            <span class="note-flow-arrow">↓</span>
+            <span>データベースで一元化</span>
+            <span class="note-flow-arrow">↓</span>
+            <span>クエリで正確に処理</span>
+            <span class="note-flow-arrow">↓</span>
+            <span class="note-flow-result">入力ミス・計算ミスの減少</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 まとめ -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">05</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Summary</p>
+        <h2 class="note-section-title">まとめ</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text note-text-large">
+        企業においてデータベースとクエリを活用することで、業務の効率化やコスト削減だけでなく、顧客分析による売上向上やサービス品質の改善が可能となる。また、データに基づいた迅速な意思決定ができる点も大きな利点である。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-brand">XBP</span>
+  <ul class="footer-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 nori — All rights reserved</span>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('follower');
+  let mx = 0, my = 0, fx = 0, fy = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateFollower() {
+    fx += (mx - fx) * 0.1;
+    fy += (my - fy) * 0.1;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  document.querySelectorAll('.nav-links a, .nav-logo').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      follower.style.width = '60px';
+      follower.style.height = '60px';
+      follower.style.opacity = '0.25';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      follower.style.width = '36px';
+      follower.style.height = '36px';
+      follower.style.opacity = '0.4';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
