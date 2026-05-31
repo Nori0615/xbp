@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第６回まとめ — XBP</title>
+<link rel="shortcut icon" href="../images/xbp.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
+
+<nav id="navbar">
+  <a href="./index.html" class="nav-logo">
+    <img src="./images/0_XBlogo.png" alt="XBP">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-bg-lines">
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
+  </div>
+  <p class="hero-year">2025</p>
+  <p class="hero-eyebrow">Design Exercise IV</p>
+  <h1 class="page-hero-title">
+    <span class="line"><span class="word">第６回</span></span>
+    <span class="line"><span class="word italic-accent">まとめ</span></span>
+  </h1>
+  <div class="page-hero-bottom">
+    <p class="hero-desc">SQL — データベース操作の基本</p>
+    <span class="page-count">Note 06</span>
+  </div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">SQL</span>
+    <span class="marquee-item">Structured Query Language</span>
+    <span class="marquee-item">Database</span>
+    <span class="marquee-item">データベース操作</span>
+    <span class="marquee-item">SQL</span>
+    <span class="marquee-item">Structured Query Language</span>
+    <span class="marquee-item">Database</span>
+    <span class="marquee-item">データベース操作</span>
+  </div>
+</div>
+
+<main class="note-container">
+
+  <!-- 01 SQLとは -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">01</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Overview</p>
+        <h2 class="note-section-title">音楽系SNS</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">
+        その時の気分にあった曲や誰かに共有したい曲を投稿するSNS
+      </p>
+    </div>
+  </section>
+
+  <!-- 02 使用動画 -->
+  <section class="note-section reveal reveal-delay-1">
+    <div class="note-section-header">
+      <span class="note-index">02</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Demo</p>
+        <h2 class="note-section-title">サービス使用動画</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <div class="note-video-link">
+        <p class="note-video-label">アプリ デモ動画</p>
+        <!-- ★ 下の YOUR_VIDEO_URL をYouTubeなどのURLに差し替えてください -->
+        <a href="https://youtu.be/FonNLtyVvwk" target="_blank" class="note-cta">
+          <span>▶ 動画を見る</span>
+          <span class="note-cta-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+  <!-- 01 SQLとは -->
+  <section class="note-section reveal">
+    <div class="note-section-header">
+      <span class="note-index">03</span>
+      <div class="note-section-title-wrap">
+        <p class="section-eyebrow">Overview</p>
+        <h2 class="note-section-title">感想</h2>
+      </div>
+    </div>
+    <div class="note-body">
+      <p class="note-text">
+        本当はYoutubeのAPIを使って曲名からアーティスト名や、サムネを写すように作りたかったがどうも
+        うまくいかなかったので、手動でリンクやアーティスト名を入力するようにした。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-brand">XBP</span>
+  <ul class="footer-links">
+    <li><a href="../index.html#portfolio">Works</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 nori — All rights reserved</span>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('follower');
+  let mx = 0, my = 0, fx = 0, fy = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateFollower() {
+    fx += (mx - fx) * 0.1;
+    fy += (my - fy) * 0.1;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  document.querySelectorAll('.note-cta, .nav-links a, .nav-logo').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      follower.style.width = '60px';
+      follower.style.height = '60px';
+      follower.style.opacity = '0.25';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      follower.style.width = '36px';
+      follower.style.height = '36px';
+      follower.style.opacity = '0.4';
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
